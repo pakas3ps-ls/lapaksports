@@ -1,0 +1,4334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LapakSports | Apparel Olahraga Berkualitas</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="LapakSports menyediakan berbagai apparel olahraga untuk lari, senam, sepak bola, gym, badminton, dan renang. Belanja online melalui Tokopedia dan Shopee atau kunjungi toko kami di Bekasi.">
+  <meta name="keywords" content="LapakSports, apparel olahraga, baju olahraga, celana olahraga, rok senam, topi olahraga, Bekasi Utara, jersey, dry fit, pakaian olahraga pria wanita">
+  <meta name="author" content="LapakSports">
+  
+  <!-- Open Graph / Facebook / WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LapakSports | Apparel Olahraga Berkualitas">
+  <meta property="og:description" content="Barang Bagus Harga Lapak. Apparel olahraga lengkap untuk lari, senam, gym, futsal, badminton & renang di Bekasi.">
+  <meta property="og:image" content="hero-lapaksports.jpg">
+  <link rel="icon" type="image/png" href="logo-lapaksports.png">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Barlow Condensed for Sporty Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5.1 CDN for Sport & UI Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* ==========================================================================
+       CSS VARIABLES & THEME CONFIGURATION
+       ========================================================================== */
+    :root {
+      --primary: #FF4600;            /* Sporty Vibrant Energetic Orange */
+      --primary-dark: #D93B00;
+      --primary-light: #FF6E38;
+      --primary-glow: rgba(255, 70, 0, 0.25);
+      
+      --dark: #0A0D14;               /* Charcoal Deep Black */
+      --dark-surface: #121824;
+      --dark-card: #182030;
+      --dark-border: #232D42;
+
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-500: #64748B;
+      --gray-700: #334155;
+      --gray-900: #0F172A;
+      --white: #FFFFFF;
+
+      --wa-green: #25D366;
+      --wa-green-dark: #1EBE5D;
+      --tokopedia-green: #03AC0E;
+      --shopee-orange: #EE4D2D;
+      --tiktok-black: #000000;
+
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Barlow Condensed', 'Plus Jakarta Sans', sans-serif;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.12);
+      --shadow-card: 0 10px 25px -5px rgba(10, 13, 20, 0.05), 0 8px 10px -6px rgba(10, 13, 20, 0.03);
+
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--gray-700);
+      background-color: #FAFAFC;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-fast);
+    }
+
+    button, input, select {
+      font-family: inherit;
+      outline: none;
+      border: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Typography Utilities */
+    .heading-display {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-sport {
+      background: rgba(255, 70, 0, 0.12);
+      color: var(--primary);
+      border: 1px solid rgba(255, 70, 0, 0.2);
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3rem auto;
+    }
+
+    .section-subtitle {
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--dark);
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    .section-desc {
+      margin-top: 0.8rem;
+      color: var(--gray-500);
+      font-size: 1rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, #FF2A00 100%);
+      color: var(--white);
+      box-shadow: 0 4px 15px var(--primary-glow);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 8px 25px rgba(255, 70, 0, 0.4);
+      filter: brightness(1.05);
+    }
+
+    .btn-secondary {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: #1e2638;
+      box-shadow: 0 6px 18px rgba(10, 13, 20, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--dark);
+      border: 2px solid var(--gray-200);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--dark);
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .btn-whatsapp {
+      background-color: var(--wa-green);
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: var(--wa-green-dark);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    }
+
+    .btn-tokopedia {
+      background-color: var(--tokopedia-green);
+      color: var(--white);
+    }
+
+    .btn-tokopedia:hover {
+      background-color: #02940c;
+      box-shadow: 0 6px 20px rgba(3, 172, 14, 0.35);
+    }
+
+    .btn-shopee {
+      background-color: var(--shopee-orange);
+      color: var(--white);
+    }
+
+    .btn-shopee:hover {
+      background-color: #d73a1c;
+      box-shadow: 0 6px 20px rgba(238, 77, 45, 0.35);
+    }
+
+    .btn-tiktok {
+      background-color: #000000;
+      color: var(--white);
+      border: 1px solid #333;
+    }
+
+    .btn-tiktok:hover {
+      background-color: #1a1a1a;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-sm {
+      padding: 0.55rem 1.1rem;
+      font-size: 0.85rem;
+    }
+
+    /* ==========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================== */
+    .announcement-bar {
+      background: var(--dark);
+      color: var(--white);
+      padding: 0.45rem 1rem;
+      font-size: 0.8rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      font-weight: 500;
+    }
+
+    .announcement-bar span b {
+      color: var(--primary);
+    }
+
+    /* ==========================================================================
+       HEADER & NAVBAR
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      transition: all var(--transition-fast);
+    }
+
+    .site-header.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      text-decoration: none;
+    }
+
+    .brand-logo-img {
+      height: 44px;
+      width: auto;
+      max-width: 200px;
+      object-fit: contain;
+      display: block;
+      transition: transform var(--transition-fast);
+    }
+
+    .logo:hover .brand-logo-img {
+      transform: scale(1.03);
+    }
+
+    .footer-logo-box {
+      display: inline-flex;
+      align-items: center;
+      background: #FFFFFF;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.85rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .footer-logo-box .brand-logo-img {
+      height: 38px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      position: relative;
+      padding: 0.4rem 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--primary);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary);
+    }
+
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      font-size: 1.4rem;
+      color: var(--dark);
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      padding: 4.5rem 0 5rem 0;
+      background: radial-gradient(circle at 85% 20%, rgba(255, 70, 0, 0.08) 0%, rgba(250, 250, 252, 0) 50%),
+                  linear-gradient(180deg, #FFFFFF 0%, #F5F7FA 100%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.75rem, 5.5vw, 4.4rem);
+      line-height: 1.02;
+      color: var(--dark);
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-headline .text-gradient {
+      background: linear-gradient(135deg, var(--primary) 0%, #FF2600 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subheadline {
+      font-size: 1.1rem;
+      color: var(--gray-500);
+      margin-bottom: 2rem;
+      max-width: 540px;
+      line-height: 1.6;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-metrics {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .metric-number {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.1;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* Hero Visual Card */
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+      border: 4px solid var(--white);
+      transform: perspective(1000px) rotateY(-4deg) rotateX(2deg);
+      transition: transform 0.5s ease;
+    }
+
+    .hero-image-wrapper:hover {
+      transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 75%, rgba(10, 13, 20, 0.2) 100%);
+      pointer-events: none;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      z-index: 3;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      animation: floatSlow 4s ease-in-out infinite alternate;
+    }
+
+    .hero-card-left {
+      bottom: -1.5rem;
+      left: -1.5rem;
+    }
+
+    .hero-card-right {
+      top: 2rem;
+      right: -1.5rem;
+      animation-delay: -2s;
+    }
+
+    .hero-badge-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .hero-badge-icon.orange {
+      background: rgba(255, 70, 0, 0.12);
+      color: var(--primary);
+    }
+
+    .hero-badge-icon.green {
+      background: rgba(37, 211, 102, 0.15);
+      color: var(--wa-green-dark);
+    }
+
+    .hero-badge-text b {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--dark);
+    }
+
+    .hero-badge-text span {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+    }
+
+    @keyframes floatSlow {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-10px); }
+    }
+
+    /* ==========================================================================
+       SECTION KEUNGGULAN (KENAPA LAPAKSPORTS)
+       ========================================================================== */
+    .section-features {
+      padding: 5rem 0;
+      background-color: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.75rem;
+    }
+
+    .feature-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.5rem;
+      transition: all var(--transition-normal);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      background: var(--white);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-card);
+    }
+
+    .feature-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(255, 70, 0, 0.1) 0%, rgba(255, 110, 56, 0.15) 100%);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+      transition: all var(--transition-fast);
+    }
+
+    .feature-card:hover .feature-icon-box {
+      background: var(--primary);
+      color: var(--white);
+      transform: scale(1.05);
+    }
+
+    .feature-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       SECTION KATEGORI OLAHRAGA
+       ========================================================================== */
+    .section-categories {
+      padding: 5.5rem 0;
+      background: #F8FAFC;
+    }
+
+    .sports-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .sport-card {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 240px;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+      display: block;
+    }
+
+    .sport-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sport-card.sport-card-wide {
+      grid-column: 1 / -1;
+      height: 220px;
+    }
+
+    .sport-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .sport-card:hover .sport-card-img {
+      transform: scale(1.08);
+    }
+
+    .sport-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10, 13, 20, 0.2) 0%, rgba(10, 13, 20, 0.85) 100%);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: var(--white);
+      transition: background 0.3s ease;
+    }
+
+    .sport-card:hover .sport-card-overlay {
+      background: linear-gradient(180deg, rgba(10, 13, 20, 0.1) 0%, rgba(255, 70, 0, 0.88) 100%);
+    }
+
+    .sport-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(10, 13, 20, 0.6);
+      backdrop-filter: blur(8px);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.7rem;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .sport-title {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    .sport-desc {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+
+    .sport-action {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #FFA47D;
+      transition: color var(--transition-fast);
+    }
+
+    .sport-card:hover .sport-action {
+      color: var(--white);
+    }
+
+    /* ==========================================================================
+       SECTION PRODUK & KATALOG
+       ========================================================================== */
+    .section-products {
+      padding: 5.5rem 0;
+      background-color: var(--white);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    /* Filter & Search Bar */
+    .catalog-controls {
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .search-wrapper {
+      max-width: 480px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.85rem 1rem 0.85rem 2.75rem;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      transition: all var(--transition-fast);
+      background: var(--gray-50);
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+      background: var(--white);
+      box-shadow: 0 0 0 4px var(--primary-glow);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray-500);
+      font-size: 1rem;
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      color: var(--gray-500);
+      cursor: pointer;
+      display: none;
+      font-size: 0.9rem;
+    }
+
+    .category-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .category-btn {
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 700;
+      background: var(--gray-100);
+      color: var(--gray-700);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      border: 1px solid transparent;
+    }
+
+    .category-btn:hover {
+      background: var(--gray-200);
+      color: var(--dark);
+    }
+
+    .category-btn.active {
+      background: var(--dark);
+      color: var(--white);
+      border-color: var(--dark);
+    }
+
+    /* Product Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.75rem;
+      min-height: 320px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-normal);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 30px rgba(10, 13, 20, 0.09);
+      border-color: rgba(255, 70, 0, 0.3);
+    }
+
+    .product-image-box {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+      background: var(--gray-100);
+      cursor: pointer;
+    }
+
+    .product-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-thumb {
+      transform: scale(1.06);
+    }
+
+    /* Quick View Hint on Image Hover */
+    .product-image-box::after {
+      content: "\f06e";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 400;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.7);
+      width: 44px;
+      height: 44px;
+      background: rgba(10, 13, 20, 0.75);
+      color: #FFFFFF;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: all var(--transition-normal);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .product-card:hover .product-image-box::after {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .product-badge-tag {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 2;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-bestseller {
+      background: #FF3B30;
+      color: var(--white);
+    }
+
+    .badge-new {
+      background: #007AFF;
+      color: var(--white);
+    }
+
+    .badge-promo {
+      background: #FF9500;
+      color: var(--white);
+    }
+
+    .product-details {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .product-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+      cursor: pointer;
+      transition: color var(--transition-fast);
+    }
+
+    .product-title:hover {
+      color: var(--primary);
+    }
+
+    .product-price {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      margin-top: auto;
+    }
+
+    .product-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem;
+    }
+
+    .btn-detail {
+      background: var(--gray-100);
+      color: var(--dark);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.6rem 0.8rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .btn-detail:hover {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .btn-card-wa {
+      background: rgba(37, 211, 102, 0.12);
+      color: var(--wa-green-dark);
+      border: 1px solid rgba(37, 211, 102, 0.25);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-card-wa:hover {
+      background: var(--wa-green);
+      color: var(--white);
+      border-color: var(--wa-green);
+    }
+
+    /* Empty Search State */
+    .catalog-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .catalog-empty i {
+      font-size: 3rem;
+      color: var(--gray-300);
+      margin-bottom: 1rem;
+    }
+
+    /* ==========================================================================
+       SECTION MARKETPLACE
+       ========================================================================== */
+    .section-marketplace {
+      padding: 5rem 0;
+      background: var(--dark);
+      color: var(--white);
+      position: relative;
+    }
+
+    .marketplace-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+
+    .market-card {
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .market-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .market-icon-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .market-brand-badge {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+    }
+
+    .market-card.tokopedia .market-brand-badge {
+      background: rgba(3, 172, 14, 0.15);
+      color: var(--tokopedia-green);
+      border: 1px solid rgba(3, 172, 14, 0.3);
+    }
+
+    .market-card.shopee .market-brand-badge {
+      background: rgba(238, 77, 45, 0.15);
+      color: var(--shopee-orange);
+      border: 1px solid rgba(238, 77, 45, 0.3);
+    }
+
+    .market-card.tiktok .market-brand-badge {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .market-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .market-desc {
+      color: var(--gray-300);
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       SECTION TENTANG KAMI
+       ========================================================================== */
+    .section-about {
+      padding: 5.5rem 0;
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-img-main {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-accent-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: 1.5rem;
+      background: var(--dark);
+      color: var(--white);
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--primary);
+    }
+
+    .about-accent-badge .badge-tagline {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .about-accent-badge .badge-sub {
+      font-size: 0.8rem;
+      color: var(--gray-300);
+    }
+
+    .about-content h2 {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      color: var(--dark);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-content p {
+      font-size: 1rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .about-features-list {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+
+    .about-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .about-feature-item i {
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+    /* ==========================================================================
+       SECTION LOKASI TOKO
+       ========================================================================== */
+    .section-location {
+      padding: 5.5rem 0;
+      background: #F8FAFC;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .location-card-info {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-card);
+    }
+
+    .location-badge {
+      margin-bottom: 1rem;
+    }
+
+    .location-name {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .location-detail-list {
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .location-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+    }
+
+    .location-icon-pin {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 70, 0, 0.1);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .location-text b {
+      display: block;
+      color: var(--dark);
+      font-size: 0.95rem;
+    }
+
+    .location-text span {
+      font-size: 0.88rem;
+      color: var(--gray-500);
+    }
+
+    .map-frame-wrapper {
+      width: 100%;
+      height: 400px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 4px solid var(--white);
+      position: relative;
+    }
+
+    .map-frame-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ==========================================================================
+       SECTION WHATSAPP CTA
+       ========================================================================== */
+    .section-whatsapp-cta {
+      padding: 4.5rem 0;
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-whatsapp-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(37, 211, 102, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .wa-cta-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+    }
+
+    .wa-cta-content {
+      max-width: 650px;
+    }
+
+    .wa-cta-content h2 {
+      font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .wa-cta-content p {
+      font-size: 1.05rem;
+      color: var(--gray-300);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: #07090F;
+      color: var(--gray-300);
+      padding: 4.5rem 0 2rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr 0.9fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-brand .logo {
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+
+    .footer-about-text {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--gray-500);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .footer-social-link {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1rem;
+      transition: all var(--transition-fast);
+    }
+
+    .footer-social-link:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .footer-col-title {
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .footer-link-item a {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      transition: color var(--transition-fast);
+      display: inline-block;
+    }
+
+    .footer-link-item a:hover {
+      color: var(--primary);
+      transform: translateX(4px);
+    }
+
+    .footer-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      color: var(--gray-300);
+    }
+
+    .footer-contact-item i {
+      color: var(--primary);
+      margin-top: 0.25rem;
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    /* ==========================================================================
+       SUPERSENTER-INSPIRED FULL PRODUCT DETAIL VIEW & MODAL
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 13, 20, 0.8);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      overflow-y: auto;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: #FAFAFC;
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-backdrop.open .modal-card {
+      transform: translateY(0);
+    }
+
+    /* Top Sticky Navigation Bar in Detail */
+    .detail-top-nav {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 100;
+      padding: 0.75rem 0;
+    }
+
+    .detail-top-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .btn-back-catalog {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gray-100);
+      color: var(--dark);
+      padding: 0.5rem 1.1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      border: 1px solid var(--gray-200);
+    }
+
+    .btn-back-catalog:hover {
+      background: var(--dark);
+      color: var(--white);
+      border-color: var(--dark);
+    }
+
+    .detail-close-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      background: var(--gray-100);
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      border: 1px solid var(--gray-200);
+    }
+
+    .detail-close-btn:hover {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    /* Main Container for Detail Page */
+    .detail-body-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.75rem 1.5rem 5rem 1.5rem;
+    }
+
+    /* Breadcrumbs */
+    .detail-breadcrumbs {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      margin-bottom: 2rem;
+    }
+
+    .detail-breadcrumbs a {
+      color: var(--gray-700);
+      font-weight: 600;
+      transition: color var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .detail-breadcrumbs a:hover {
+      color: var(--primary);
+    }
+
+    .detail-breadcrumbs span.current {
+      color: var(--dark);
+      font-weight: 700;
+    }
+
+    /* 2-Column Hero Product Detail Layout */
+    .product-detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 3.5rem;
+      align-items: start;
+      margin-bottom: 4rem;
+    }
+
+    /* Gallery Column (Left) */
+    .product-gallery {
+      position: sticky;
+      top: 90px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .product-gallery-main {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-card);
+      aspect-ratio: 1 / 1.08;
+    }
+
+    .product-gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .product-gallery-thumbs {
+      display: flex;
+      gap: 0.75rem;
+      overflow-x: auto;
+      padding-bottom: 0.35rem;
+    }
+
+    .gallery-thumb-item {
+      width: 72px;
+      height: 72px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 2px solid var(--gray-200);
+      cursor: pointer;
+      background: var(--white);
+      flex-shrink: 0;
+      transition: all var(--transition-fast);
+    }
+
+    .gallery-thumb-item.active,
+    .gallery-thumb-item:hover {
+      border-color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    .gallery-thumb-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Info Panel Column (Right) */
+    .product-info-panel {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-detail-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .product-detail-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.15;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.35rem;
+    }
+
+    .product-detail-tagline {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.85rem;
+    }
+
+    .product-rating-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .product-stars {
+      color: #FFB800;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+    }
+
+    .product-rating-score {
+      font-weight: 800;
+      color: var(--dark);
+      font-size: 0.95rem;
+    }
+
+    .product-rating-count {
+      color: var(--gray-500);
+      font-size: 0.85rem;
+    }
+
+    /* Price Box */
+    .product-detail-price-box {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .detail-price-current {
+      font-family: var(--font-display);
+      font-size: 2.3rem;
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1;
+    }
+
+    .detail-price-old {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gray-500);
+      text-decoration: line-through;
+    }
+
+    .detail-price-tag {
+      background: rgba(255, 70, 0, 0.12);
+      color: var(--primary);
+      border: 1px solid rgba(255, 70, 0, 0.25);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+    }
+
+    .product-detail-lead {
+      font-size: 1rem;
+      color: var(--gray-700);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Key Features Box */
+    .product-features-box {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .product-features-box h4 {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-check-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .feature-check-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.92rem;
+      color: var(--gray-700);
+    }
+
+    .feature-check-list li i {
+      color: var(--wa-green-dark);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* Variant Selectors */
+    .modal-variants-section {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .modal-variant-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .modal-variant-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--dark);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .modal-variant-label span {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .modal-chips-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .variant-chip {
+      padding: 0.4rem 0.95rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1.5px solid var(--gray-200);
+      background: var(--white);
+      color: var(--dark);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .variant-chip:hover {
+      border-color: var(--primary);
+      background: #FFF5F2;
+    }
+
+    .variant-chip.active {
+      background: var(--dark);
+      color: var(--white);
+      border-color: var(--dark);
+    }
+
+    .color-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: var(--radius-full);
+      display: inline-block;
+      border: 1px solid rgba(0,0,0,0.15);
+    }
+
+    /* Big WhatsApp Purchase CTA */
+    .product-cta-container {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .product-wa-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, var(--wa-green) 0%, var(--wa-green-dark) 100%);
+      color: var(--white);
+      padding: 1.15rem 2rem;
+      border-radius: var(--radius-full);
+      font-size: 1.05rem;
+      font-weight: 800;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+      transition: all var(--transition-normal);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .product-wa-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+      filter: brightness(1.05);
+      color: var(--white);
+    }
+
+    .product-cta-trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.25rem;
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      font-weight: 600;
+    }
+
+    .product-cta-trust span {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Detail Sections (Full Description & Specs) */
+    .product-detail-sections {
+      margin-top: 1rem;
+      border-top: 1px solid var(--gray-200);
+      padding-top: 3.5rem;
+    }
+
+    .detail-section-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 1.25rem;
+    }
+
+    .detail-full-desc-text {
+      font-size: 1.02rem;
+      color: var(--gray-700);
+      line-height: 1.8;
+      max-width: 960px;
+    }
+
+    .detail-full-desc-text p {
+      margin-bottom: 1rem;
+    }
+
+    /* Specs Grid (2 Cards) */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .specs-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .specs-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .specs-card h3 i {
+      color: var(--primary);
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .specs-table tr {
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .specs-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .specs-table th {
+      text-align: left;
+      padding: 0.75rem 0.5rem 0.75rem 0;
+      font-size: 0.88rem;
+      color: var(--gray-500);
+      font-weight: 600;
+      width: 38%;
+    }
+
+    .specs-table td {
+      padding: 0.75rem 0;
+      font-size: 0.92rem;
+      color: var(--dark);
+      font-weight: 700;
+    }
+
+    /* Box List */
+    .box-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .box-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--gray-700);
+    }
+
+    .box-item i {
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+    .specs-disclaimer {
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      margin-top: 1.5rem;
+      font-style: italic;
+      background: var(--gray-50);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--primary);
+    }
+
+    /* Related Products Section */
+    .detail-related-section {
+      margin-top: 4rem;
+      border-top: 1px solid var(--gray-200);
+      padding-top: 3.5rem;
+    }
+
+    /* Sticky Mobile Bottom Bar */
+    .mobile-sticky-action-bar {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .product-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .product-gallery {
+        position: static;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .specs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .modal-card {
+        padding-bottom: 80px;
+      }
+      .mobile-sticky-action-bar {
+        display: none;
+      }
+      .modal-backdrop.open .mobile-sticky-action-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-top: 1px solid var(--gray-200);
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+        padding: 0.75rem 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 2100;
+      }
+      .mobile-bar-info {
+        display: flex;
+        flex-direction: column;
+      }
+      .mobile-bar-label {
+        font-size: 0.72rem;
+        color: var(--gray-500);
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .mobile-bar-price {
+        font-family: var(--font-display);
+        font-size: 1.45rem;
+        font-weight: 900;
+        color: var(--dark);
+        line-height: 1;
+      }
+      .mobile-bar-btn {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.9rem;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+
+    /* ==========================================================================
+       FLOATING BUTTONS (WHATSAPP & SCROLL TO TOP)
+       ========================================================================== */
+    .floating-container {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.75rem;
+    }
+
+    .btn-floating-wa {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background-color: var(--wa-green);
+      color: var(--white);
+      padding: 0.85rem 1.4rem;
+      border-radius: var(--radius-full);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all var(--transition-normal);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .btn-floating-wa:hover {
+      background-color: var(--wa-green-dark);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
+    }
+
+    .btn-floating-wa .pulse-ring {
+      position: absolute;
+      inset: -4px;
+      border-radius: var(--radius-full);
+      border: 2px solid var(--wa-green);
+      animation: ripple 2s infinite ease-out;
+      pointer-events: none;
+    }
+
+    @keyframes ripple {
+      0% { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+
+    .btn-back-to-top {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-full);
+      background: var(--dark);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-fast);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+    }
+
+    .btn-back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .btn-back-to-top:hover {
+      background: var(--primary);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (MEDIA QUERIES)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .hero-visual {
+        max-width: 580px;
+        margin: 0 auto;
+      }
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .sports-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .marketplace-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        gap: 1.25rem;
+        border-bottom: 1px solid var(--gray-200);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: translateY(-120%);
+        transition: transform var(--transition-normal);
+        z-index: 998;
+      }
+      .nav-menu.open {
+        transform: translateY(0);
+      }
+      .mobile-toggle {
+        display: flex;
+      }
+      .hero-headline {
+        font-size: 2.6rem;
+      }
+      .hero-card-left {
+        left: 0;
+        bottom: -1rem;
+      }
+      .hero-card-right {
+        right: 0;
+        top: 1rem;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .sports-grid {
+        grid-template-columns: 1fr;
+      }
+      .modal-card {
+        grid-template-columns: 1fr;
+        max-height: 85vh;
+      }
+      .modal-img-col {
+        height: 240px;
+        min-height: auto;
+      }
+      .modal-content-col {
+        padding: 1.5rem;
+      }
+      .wa-cta-box {
+        flex-direction: column;
+        text-align: center;
+      }
+      .wa-cta-box .btn {
+        width: 100%;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .btn-floating-wa span {
+        display: none;
+      }
+      .btn-floating-wa {
+        padding: 0.85rem;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+      }
+      .btn-floating-wa i {
+        font-size: 1.4rem;
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-metrics {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .hero-cta-group .btn {
+        width: 100%;
+      }
+      .about-features-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================== -->
+  <aside class="announcement-bar" aria-label="Pengumuman">
+    <span><i class="fa-solid fa-bullhorn" style="color: var(--primary);"></i> <b>LapakSports:</b> "Barang Bagus Harga Lapak" &bull; Melayani Online & Offline di Bekasi Utara</span>
+  </aside>
+
+  <!-- ==========================================================================
+       NAVBAR / HEADER
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container navbar">
+      <!-- Logo -->
+      <a href="#home" class="logo" aria-label="LapakSports Home">
+        <img src="logo-lapaksports.png" alt="LapakSports Logo" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu" aria-label="Navigasi Utama">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#kategori" class="nav-link">Kategori</a>
+        <a href="#produk" class="nav-link">Produk</a>
+        <a href="#tentang" class="nav-link">Tentang Kami</a>
+        <a href="#lokasi" class="nav-link">Lokasi</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="nav-actions">
+        <a href="#produk" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Belanja Sekarang</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Buka Menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Text Content -->
+          <div class="hero-content">
+            <div class="hero-tag">
+              <span class="badge-pill badge-sport">
+                <i class="fa-solid fa-medal"></i> Toko Apparel Olahraga Terpercaya
+              </span>
+            </div>
+            
+            <h1 class="hero-headline">
+              Upgrade <br>
+              <span class="text-gradient">Outfit</span> <br>
+              Olahragamu.
+            </h1>
+
+            <p class="hero-subheadline">
+              Apparel olahraga berkualitas untuk berbagai aktivitas. Nyaman dipakai, sporty dilihat, siap menemani setiap gerakanmu.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#produk" class="btn btn-primary">
+                <i class="fa-solid fa-bag-shopping"></i>
+                Belanja Sekarang
+              </a>
+              <!-- WhatsApp Quick Contact: 085219371052 -->
+              <a href="https://wa.me/6285219371052?text=Halo%20LapakSports,%20saya%20ingin%20bertanya%20tentang%20produk%20apparel%20olahraga." 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+                Chat WhatsApp
+              </a>
+            </div>
+
+            <!-- Trust Metrics -->
+            <div class="hero-metrics">
+              <div class="metric-item">
+                <span class="metric-number">100%</span>
+                <span class="metric-label">Bahan Nyaman & Adem</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">500+</span>
+                <span class="metric-label">Pilihan Apparel</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">4.9/5</span>
+                <span class="metric-label">Kepuasan Pelanggan</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image & Floating Cards -->
+          <div class="hero-visual">
+            <div class="hero-image-wrapper">
+              <img src="hero-lapaksports.jpg" 
+                   alt="LapakSports - Upgrade Outfit Olahragamu" 
+                   class="hero-img"
+                   loading="eager">
+              <div class="hero-image-overlay"></div>
+            </div>
+
+            <!-- Floating Badge Left -->
+            <div class="hero-floating-card hero-card-left">
+              <div class="hero-badge-icon orange">
+                <i class="fa-solid fa-fire"></i>
+              </div>
+              <div class="hero-badge-text">
+                <b>Barang Bagus</b>
+                <span>Harga Lapak Terjangkau</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge Right -->
+            <div class="hero-floating-card hero-card-right">
+              <div class="hero-badge-icon green">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <div class="hero-badge-text">
+                <b>Siap Kirim</b>
+                <span>Via Tokopedia & WhatsApp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION KEUNGGULAN (KENAPA LAPAKSPORTS)
+         ========================================================================== -->
+    <section class="section-features">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Kualitas & Nilai Lebih</span>
+          <h2 class="section-title">Kenapa LapakSports?</h2>
+          <p class="section-desc">Kami menghadirkan kombinasi apparel sporty terbaik dengan harga yang bersahabat untuk semua pecinta olahraga.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Card 1 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="fa-solid fa-shirt"></i>
+            </div>
+            <h3 class="feature-title">Pilihan Apparel Lengkap</h3>
+            <p class="feature-desc">Baju, celana panjang, celana pendek, rok, topi, dan berbagai apparel olahraga untuk pria maupun wanita.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="fa-solid fa-person-running"></i>
+            </div>
+            <h3 class="feature-title">Untuk Berbagai Jenis Olahraga</h3>
+            <p class="feature-desc">Pilihan apparel khusus untuk lari, senam, gym, futsal, badminton, renang, hingga sesi santai.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 class="feature-title">Nyaman & Sporty</h3>
+            <p class="feature-desc">Bahan breathable, dry-fit cepat kering, dan lentur untuk menunjang performa gerak maksimal.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <i class="fa-solid fa-store"></i>
+            </div>
+            <h3 class="feature-title">Belanja Online & Offline</h3>
+            <p class="feature-desc">Bisa datang langsung mencoba di toko fisik Bekasi Utara atau belanja praktis via marketplace & WA.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION KATEGORI OLAHRAGA
+         ========================================================================== -->
+    <section class="section-categories" id="kategori">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Temukan Kebutuhanmu</span>
+          <h2 class="section-title">Pilih Olahragamu</h2>
+          <p class="section-desc">Klik kategori untuk langsung melihat pilihan apparel olahraga yang sesuai dengan aktivitas favoritmu.</p>
+        </div>
+
+        <div class="sports-grid">
+          <!-- 1. Lari -->
+          <div class="sport-card" onclick="filterBySport('Lari')" role="button" tabindex="0" aria-label="Lihat Apparel Lari">
+            <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&auto=format&fit=crop&q=80" alt="Apparel Lari" class="sport-card-img" loading="lazy">
+            <div class="sport-card-overlay">
+              <span class="sport-badge"><i class="fa-solid fa-person-running"></i> Running</span>
+              <h3 class="sport-title">Lari</h3>
+              <p class="sport-desc">Apparel ringan dan nyaman untuk aktivitas running harian maupun marathon.</p>
+              <span class="sport-action">Lihat Produk <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- 2. Senam -->
+          <div class="sport-card" onclick="filterBySport('Senam')" role="button" tabindex="0" aria-label="Lihat Apparel Senam">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&auto=format&fit=crop&q=80" alt="Apparel Senam & Fitness" class="sport-card-img" loading="lazy">
+            <div class="sport-card-overlay">
+              <span class="sport-badge"><i class="fa-solid fa-spa"></i> Fitness & Aerobic</span>
+              <h3 class="sport-title">Senam</h3>
+              <p class="sport-desc">Pilihan apparel fleksibel dan elastis untuk senam, zumba, dan aktivitas fitness.</p>
+              <span class="sport-action">Lihat Produk <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- 3. Sepak Bola -->
+          <div class="sport-card" onclick="filterBySport('Sepak Bola')" role="button" tabindex="0" aria-label="Lihat Apparel Sepak Bola">
+            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600&auto=format&fit=crop&q=80" alt="Apparel Sepak Bola & Futsal" class="sport-card-img" loading="lazy">
+            <div class="sport-card-overlay">
+              <span class="sport-badge"><i class="fa-solid fa-futbol"></i> Soccer / Futsal</span>
+              <h3 class="sport-title">Sepak Bola</h3>
+              <p class="sport-desc">Apparel sporty dan jersey adem untuk latihan dan pertandingan kompetitif.</p>
+              <span class="sport-action">Lihat Produk <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- 4. Gym -->
+          <div class="sport-card" onclick="filterBySport('Gym')" role="button" tabindex="0" aria-label="Lihat Apparel Gym">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&auto=format&fit=crop&q=80" alt="Apparel Gym & Workout" class="sport-card-img" loading="lazy">
+            <div class="sport-card-overlay">
+              <span class="sport-badge"><i class="fa-solid fa-dumbbell"></i> Workout</span>
+              <h3 class="sport-title">Gym</h3>
+              <p class="sport-desc">Outfit nyaman dan kokoh untuk angkat beban, kalistenik, dan latihan gym.</p>
+              <span class="sport-action">Lihat Produk <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- 5. Badminton -->
+          <div class="sport-card" onclick="filterBySport('Badminton')" role="button" tabindex="0" aria-label="Lihat Apparel Badminton">
+            <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=600&auto=format&fit=crop&q=80" alt="Apparel Badminton" class="sport-card-img" loading="lazy">
+            <div class="sport-card-overlay">
+              <span class="sport-badge"><i class="fa-solid fa-table-tennis-paddle-ball"></i> Racket Sport</span>
+              <h3 class="sport-title">Badminton</h3>
+              <p class="sport-desc">Apparel fleksibel berpori untuk kelincahan permainan badminton di lapangan.</p>
+              <span class="sport-action">Lihat Produk <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- 6. Renang -->
+          <div class="sport-card" onclick="filterBySport('Renang')" role="button" tabindex="0" aria-label="Lihat Apparel Renang">
+            <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&auto=format&fit=crop&q=80" alt="Apparel Renang" class="sport-card-img" loading="lazy">
+            <div class="sport-card-overlay">
+              <span class="sport-badge"><i class="fa-solid fa-person-swimming"></i> Aquatics</span>
+              <h3 class="sport-title">Renang</h3>
+              <p class="sport-desc">Pilihan apparel hidrodinamis yang mendukung aktivitas olahraga air secara bebas.</p>
+              <span class="sport-action">Lihat Produk <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- 7. Aksesoris Olahraga -->
+          <div class="sport-card sport-card-wide" onclick="filterBySport('Aksesoris')" role="button" tabindex="0" aria-label="Lihat Aksesoris Olahraga">
+            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1200&auto=format&fit=crop&q=80" alt="Aksesoris Olahraga" class="sport-card-img" loading="lazy">
+            <div class="sport-card-overlay" style="background: linear-gradient(90deg, rgba(10, 13, 20, 0.94) 0%, rgba(10, 13, 20, 0.7) 60%, rgba(255, 70, 0, 0.6) 100%);">
+              <span class="sport-badge" style="background: var(--primary); color: white;"><i class="fa-solid fa-socks"></i> Gear & Aksesoris Lengkap</span>
+              <h3 class="sport-title" style="font-size: 2.2rem;">Aksesoris Olahraga</h3>
+              <p class="sport-desc" style="max-width: 680px; font-size: 0.95rem;">Lengkapi perlengkapanmu: Topi, tas gym, kaos kaki anti-slip, deker pelindung, kacamata renang, pelampung, skipping, bola, dan apparel penunjang lainnya.</p>
+              <span class="sport-action" style="color: #FFA47D;">Eksplor Semua Aksesoris <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION PRODUK PILIHAN
+         ========================================================================== -->
+    <section class="section-products" id="produk">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Koleksi Terpopuler</span>
+          <h2 class="section-title">Produk Pilihan LapakSports</h2>
+          <p class="section-desc">Cari dan temukan model apparel yang kamu inginkan. Pesan langsung via WhatsApp atau marketplace.</p>
+        </div>
+
+        <!-- Controls: Search & Category Filter -->
+        <div class="catalog-controls">
+          <!-- Search Bar -->
+          <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="productSearch" class="search-input" placeholder="Cari nama produk apparel olahraga..." autocomplete="off">
+            <button id="searchClearBtn" class="search-clear" aria-label="Hapus Pencarian">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <!-- Category Filter Buttons: Semua | Baju | Celana Panjang | Celana Pendek | Rok | Topi | Lainnya -->
+          <div class="category-pills" id="categoryPills">
+            <button class="category-btn active" data-category="Semua">Semua</button>
+            <button class="category-btn" data-category="Baju">Baju</button>
+            <button class="category-btn" data-category="Celana Panjang">Celana Panjang</button>
+            <button class="category-btn" data-category="Celana Pendek">Celana Pendek</button>
+            <button class="category-btn" data-category="Rok">Rok</button>
+            <button class="category-btn" data-category="Aksesoris">Aksesoris Olahraga</button>
+            <button class="category-btn" data-category="Topi">Topi</button>
+            <button class="category-btn" data-category="Apparel Lainnya">Apparel Lainnya</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Product Grid -->
+        <div class="products-grid" id="productsGrid" aria-live="polite">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION MARKETPLACE
+         ========================================================================== -->
+    <section class="section-marketplace" id="marketplace">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-subtitle" style="color: #FFA47D;">Belanja Praktis & Cepat</span>
+          <h2 class="section-title" style="color: var(--white);">Belanja Online di Marketplace Favoritmu</h2>
+          <p class="section-desc" style="color: var(--gray-300);">Pilih platform belanja yang paling nyaman untukmu dengan jaminan transaksi aman dan promo menarik.</p>
+        </div>
+
+        <div class="marketplace-grid">
+          <!-- Tokopedia Card (Official Link Provided) -->
+          <div class="market-card tokopedia">
+            <div>
+              <div class="market-icon-header">
+                <div class="market-brand-badge">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <span class="badge-pill" style="background: rgba(3, 172, 14, 0.2); color: #2CE438;">Official Store</span>
+              </div>
+              <h3 class="market-title">Tokopedia</h3>
+              <p class="market-desc">Temukan produk LapakSports di Tokopedia. Nikmati bebas ongkir, proteksi transaksi, dan ulasan lengkap pelanggan.</p>
+            </div>
+            <!-- Tokopedia Store Link: https://www.tokopedia.com/lapaksportsbekasi -->
+            <a href="https://www.tokopedia.com/lapaksportsbekasi" target="_blank" rel="noopener noreferrer" class="btn btn-tokopedia">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              Belanja di Tokopedia
+            </a>
+          </div>
+
+          <!-- Shopee Card (Placeholder URL Clearly Provided) -->
+          <div class="market-card shopee">
+            <div>
+              <div class="market-icon-header">
+                <div class="market-brand-badge">
+                  <i class="fa-solid fa-basket-shopping"></i>
+                </div>
+                <span class="badge-pill" style="background: rgba(238, 77, 45, 0.2); color: #FFA18F;">Star Seller</span>
+              </div>
+              <h3 class="market-title">Shopee</h3>
+              <p class="market-desc">Temukan produk LapakSports di Shopee. Nikmati berbagai voucher diskon, gratis ongkir XTRA, dan kemudahan berbelanja.</p>
+            </div>
+            <!--
+              ==================================================================
+              CATATAN UNTUK PENGELOLA:
+              Ganti placeholder SHOPEE_URL_DISINI di bawah ini dengan URL toko Shopee resmi Anda.
+              Contoh: https://shopee.co.id/lapaksports
+              ==================================================================
+            -->
+            <a href="SHOPEE_URL_DISINI" target="_blank" rel="noopener noreferrer" class="btn btn-shopee" onclick="handleShopeeClick(event, this)">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              Belanja di Shopee
+            </a>
+          </div>
+
+          <!-- TikTok Shop Card (Official Link Provided) -->
+          <div class="market-card tiktok">
+            <div>
+              <div class="market-icon-header">
+                <div class="market-brand-badge">
+                  <i class="fa-brands fa-tiktok"></i>
+                </div>
+                <span class="badge-pill" style="background: rgba(255, 255, 255, 0.15); color: var(--white);">Live Shop</span>
+              </div>
+              <h3 class="market-title">TikTok</h3>
+              <p class="market-desc">Saksikan live streaming, review produk langsung, dan diskon live eksklusif di akun resmi TikTok LapakSports.</p>
+            </div>
+            <!-- TikTok Link: https://www.tiktok.com/@sultan.natlus -->
+            <a href="https://www.tiktok.com/@sultan.natlus" target="_blank" rel="noopener noreferrer" class="btn btn-tiktok">
+              <i class="fa-brands fa-tiktok"></i>
+              Belanja di TikTok
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION TENTANG LAPAKSPORTS
+         ========================================================================== -->
+    <section class="section-about" id="tentang">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Visual with Badges -->
+          <div class="about-visual">
+            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&auto=format&fit=crop&q=80" 
+                 alt="Aktivitas Olahraga LapakSports" 
+                 class="about-img-main"
+                 loading="lazy">
+            <div class="about-accent-badge">
+              <div class="badge-tagline">"Barang Bagus Harga Lapak"</div>
+              <div class="badge-sub">Komitmen Kualitas & Kepercayaan Pelanggan</div>
+            </div>
+          </div>
+
+          <!-- Story Text Content -->
+          <div class="about-content">
+            <span class="section-subtitle">Mengenal Lebih Dekat</span>
+            <h2>Tentang LapakSports</h2>
+            
+            <p>
+              LapakSports adalah toko apparel olahraga yang menyediakan berbagai pilihan pakaian dan perlengkapan apparel untuk menunjang aktivitas olahraga dan gaya hidup aktif.
+            </p>
+            <p>
+              Layanan kami ditujukan untuk berbagai kebutuhan olahraga, mulai dari lari, senam, sepak bola, gym, badminton hingga renang. Kami percaya bahwa berolahraga dengan pakaian yang nyaman dan stylish tidak harus mahal.
+            </p>
+            <p>
+              Selain baju olahraga, LapakSports juga menyediakan celana panjang, celana pendek, rok olahraga, topi, dan berbagai pilihan apparel lainnya untuk pria, wanita, maupun seluruh anggota keluarga.
+            </p>
+
+            <div class="about-features-list">
+              <div class="about-feature-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Material Breathable & Nyaman</span>
+              </div>
+              <div class="about-feature-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Model Sporty & Up-to-date</span>
+              </div>
+              <div class="about-feature-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Harga Kompetitif & Bersahabat</span>
+              </div>
+              <div class="about-feature-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Toko Fisik Jelas di Bekasi Utara</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION LOKASI TOKO FISIK
+         ========================================================================== -->
+    <section class="section-location" id="lokasi">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Kunjungan Offline</span>
+          <h2 class="section-title">Kunjungi Toko LapakSports</h2>
+          <p class="section-desc">Ingin melihat langsung bahan, mencoba ukuran, atau konsultasi apparel? Kunjungi langsung gerai offline kami di Bekasi.</p>
+        </div>
+
+        <div class="location-grid">
+          <!-- Address Info Card -->
+          <div class="location-card-info">
+            <span class="badge-pill badge-sport location-badge">
+              <i class="fa-solid fa-location-dot"></i> Gerai Fisik Resmi
+            </span>
+            <h3 class="location-name">LapakSports Bekasi</h3>
+
+            <div class="location-detail-list">
+              <!-- Alamat -->
+              <div class="location-detail-item">
+                <div class="location-icon-pin">
+                  <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div class="location-text">
+                  <b>Alamat Lengkap:</b>
+                  <span>Ruko Dsmart Blok I7, Bekasi Utara, Bekasi, Jawa Barat, Indonesia</span>
+                </div>
+              </div>
+
+              <!-- Jam Buka -->
+              <div class="location-detail-item">
+                <div class="location-icon-pin">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <div class="location-text">
+                  <b>Jam Operasional:</b>
+                  <span>Senin - Minggu: 09.00 - 21.00 WIB</span>
+                </div>
+              </div>
+
+              <!-- Kontak Kasir / CS -->
+              <div class="location-detail-item">
+                <div class="location-icon-pin">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="location-text">
+                  <b>Layanan Pelanggan / WhatsApp:</b>
+                  <span>085219371052</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Button Google Maps -->
+            <a href="https://www.google.com/maps/search/?api=1&query=Ruko+Dsmart+Blok+I7+Bekasi+Utara+Bekasi" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-primary" 
+               style="width: 100%;">
+              <i class="fa-solid fa-diamond-turn-right"></i>
+              Buka Google Maps
+            </a>
+          </div>
+
+          <!-- Embed Google Maps (No API Key Required) -->
+          <div class="map-frame-wrapper">
+            <iframe 
+              src="https://maps.google.com/maps?q=Ruko+Dsmart+Blok+I7,+Bekasi+Utara,+Bekasi&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              title="Peta Lokasi LapakSports Ruko Dsmart Blok I7 Bekasi Utara" 
+              loading="lazy" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION WHATSAPP CTA
+         ========================================================================== -->
+    <section class="section-whatsapp-cta" id="kontak">
+      <div class="container">
+        <div class="wa-cta-box">
+          <div class="wa-cta-content">
+            <h2>Butuh Bantuan Memilih Apparel?</h2>
+            <p>Chat langsung dengan tim LapakSports untuk mendapatkan informasi produk, ukuran, stok, dan pemesanan dengan respon ramah dan cepat.</p>
+          </div>
+          <!-- WhatsApp Contact Button -->
+          <a href="https://wa.me/6285219371052?text=Halo%20LapakSports,%20saya%20ingin%20bertanya%20tentang%20produk%20apparel%20olahraga." 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn btn-whatsapp" 
+             style="font-size: 1.05rem; padding: 1rem 2rem;">
+            <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+            Chat WhatsApp (085219371052)
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <a href="#home" class="logo" aria-label="LapakSports Home">
+            <div class="footer-logo-box">
+              <img src="logo-lapaksports.png" alt="LapakSports Logo" class="brand-logo-img">
+            </div>
+          </a>
+          <div class="footer-tagline">"Barang Bagus Harga Lapak"</div>
+          <p class="footer-about-text">
+            Toko apparel olahraga terlengkap di Bekasi Utara. Menghadirkan beragam pilihan pakaian olahraga nyaman untuk menunjang performa gerak terbaik Anda.
+          </p>
+          <div class="footer-socials">
+            <a href="https://www.tiktok.com/@sultan.natlus" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="TikTok LapakSports">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://www.tokopedia.com/lapaksportsbekasi" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Tokopedia LapakSports">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+            <a href="https://wa.me/6285219371052" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="WhatsApp LapakSports">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Kategori Olahraga -->
+        <div>
+          <h4 class="footer-col-title">Kategori</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="#kategori" onclick="filterBySport('Lari')">Lari</a></li>
+            <li class="footer-link-item"><a href="#kategori" onclick="filterBySport('Senam')">Senam</a></li>
+            <li class="footer-link-item"><a href="#kategori" onclick="filterBySport('Sepak Bola')">Sepak Bola</a></li>
+            <li class="footer-link-item"><a href="#kategori" onclick="filterBySport('Gym')">Gym</a></li>
+            <li class="footer-link-item"><a href="#kategori" onclick="filterBySport('Badminton')">Badminton</a></li>
+            <li class="footer-link-item"><a href="#kategori" onclick="filterBySport('Renang')">Renang</a></li>
+            <li class="footer-link-item"><a href="#kategori" onclick="filterBySport('Aksesoris')">Aksesoris Olahraga</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Informasi & Marketplace -->
+        <div>
+          <h4 class="footer-col-title">Informasi</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="#tentang">Tentang Kami</a></li>
+            <li class="footer-link-item"><a href="#lokasi">Lokasi Toko</a></li>
+            <li class="footer-link-item"><a href="#kontak">Kontak Kami</a></li>
+            <li class="footer-link-item"><a href="https://www.tokopedia.com/lapaksportsbekasi" target="_blank" rel="noopener noreferrer">Tokopedia Official</a></li>
+            <!--
+              Catatan: Ganti SHOPEE_URL_DISINI jika link Shopee sudah tersedia
+            -->
+            <li class="footer-link-item"><a href="SHOPEE_URL_DISINI" onclick="handleShopeeClick(event, this)">Shopee Store</a></li>
+            <li class="footer-link-item"><a href="https://www.tiktok.com/@sultan.natlus" target="_blank" rel="noopener noreferrer">TikTok Shop</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Kontak & Lokasi -->
+        <div>
+          <h4 class="footer-col-title">Kontak & Lokasi</h4>
+          <div class="footer-contact-info">
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Ruko Dsmart Blok I7, Bekasi Utara, Bekasi, Jawa Barat</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>WhatsApp: 085219371052</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-clock"></i>
+              <span>Buka Setiap Hari: 09.00 - 21.00 WIB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 LapakSports. All Rights Reserved.</p>
+        <p>Produk Berkualitas, Harga Lapak.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL DETAIL PRODUK
+       ========================================================================== -->
+  <div class="modal-backdrop" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      
+      <!-- Top Sticky Navigation Bar -->
+      <nav class="detail-top-nav">
+        <div class="container detail-top-nav-inner">
+          <button class="btn-back-catalog" id="detailBackCatalogBtn" onclick="closeProductModal()">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Kembali ke Katalog</span>
+          </button>
+          <button class="detail-close-btn" id="modalCloseBtn" aria-label="Tutup Dialog Detail">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main Body Container -->
+      <div class="detail-body-container">
+        
+        <!-- Breadcrumbs -->
+        <nav class="detail-breadcrumbs" aria-label="Breadcrumb">
+          <a onclick="closeProductModal()">Home</a>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+          <a onclick="closeProductModal()">Katalog Produk</a>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+          <span id="detailBreadcrumbCat">Kategori</span>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+          <span class="current" id="detailBreadcrumbTitle">Nama Produk</span>
+        </nav>
+
+        <!-- 2-Column Hero Detail Section (Supersenter Style) -->
+        <div class="product-detail-layout">
+          
+          <!-- Column Left: Product Gallery -->
+          <div class="product-gallery">
+            <div class="product-gallery-main">
+              <img id="modalImage" src="" alt="Detail Produk LapakSports">
+            </div>
+            <div class="product-gallery-thumbs" id="modalGalleryThumbs">
+              <!-- Dynamically populated thumbnails -->
+            </div>
+          </div>
+
+          <!-- Column Right: Product Info & Order Panel -->
+          <div class="product-info-panel">
+            <div class="product-detail-badge-row">
+              <span class="badge-pill" id="modalTagBadge">BEST SELLER</span>
+              <span class="badge-pill badge-sport" id="modalCategoryBadge">Kategori</span>
+            </div>
+
+            <h1 class="product-detail-title" id="modalTitle">Nama Produk</h1>
+            <div class="product-detail-tagline" id="modalTagline">OFFICIAL ATHLETIC APPAREL</div>
+
+            <!-- Rating Row -->
+            <div class="product-rating-row">
+              <div class="product-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="product-rating-score" id="modalRatingScore">5.0</span>
+              <span class="product-rating-count" id="modalRatingCount">(88 Ulasan Terverifikasi)</span>
+            </div>
+
+            <!-- Price Box -->
+            <div class="product-detail-price-box">
+              <div class="detail-price-current" id="modalPrice">Rp 0</div>
+              <div class="detail-price-old" id="modalOldPrice">Rp 0</div>
+              <span class="detail-price-tag" id="modalDiscountTag">HEMAT 30%</span>
+            </div>
+
+            <!-- Lead Paragraph -->
+            <p class="product-detail-lead" id="modalDesc">Deskripsi detail produk...</p>
+
+            <!-- Key Features Box -->
+            <div class="product-features-box">
+              <h4>FITUR &amp; KEUNGGULAN UTAMA:</h4>
+              <ul class="feature-check-list" id="modalFeaturesList">
+                <!-- Dynamically populated features -->
+              </ul>
+            </div>
+
+            <!-- Interactive Variants (Color & Size) -->
+            <div class="modal-variants-section" id="modalVariantsSection">
+              <div class="modal-variant-row" id="modalColorRow">
+                <div class="modal-variant-label">PILIH WARNA: <span id="modalSelectedColor">-</span></div>
+                <div class="modal-chips-list" id="modalColorsList"></div>
+              </div>
+              <div class="modal-variant-row" id="modalSizeRow">
+                <div class="modal-variant-label">PILIH UKURAN: <span id="modalSelectedSize">-</span></div>
+                <div class="modal-chips-list" id="modalSizesList"></div>
+              </div>
+            </div>
+
+            <!-- WhatsApp Purchase CTA -->
+            <div class="product-cta-container">
+              <a href="#" id="modalWaBtn" target="_blank" rel="noopener noreferrer" class="product-wa-cta-btn">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i>
+                <span>TANYAKAN &amp; PESAN VIA WHATSAPP</span>
+              </a>
+              <div class="product-cta-trust">
+                <span><i class="fa-solid fa-circle-check" style="color: var(--wa-green-dark);"></i> Respon Cepat CS</span>
+                <span><i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> 100% Produk Original</span>
+                <span><i class="fa-solid fa-truck-fast" style="color: #2563EB;"></i> Pengiriman Se-Indonesia</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Extended Detail Sections: Full Description, Specs, Package & Warranty -->
+        <div class="product-detail-sections">
+          <h2 class="detail-section-title">Deskripsi Lengkap</h2>
+          <div class="detail-full-desc-text" id="modalFullDesc">
+            <!-- Dynamically populated paragraphs -->
+          </div>
+
+          <!-- Specs and Package Grid -->
+          <div class="specs-grid">
+            <!-- Card 1: Spesifikasi Produk -->
+            <div class="specs-card">
+              <h3><i class="fa-solid fa-sliders"></i> Spesifikasi Produk</h3>
+              <table class="specs-table">
+                <tbody id="modalSpecsTableBody">
+                  <!-- Dynamically populated specs -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Card 2: Kelengkapan Paket & Garansi -->
+            <div class="specs-card">
+              <h3><i class="fa-solid fa-box-open"></i> Kelengkapan Dalam Paket</h3>
+              <div class="box-list" id="modalPackageList">
+                <!-- Dynamically populated box items -->
+              </div>
+              <div class="specs-disclaimer">
+                * Garansi penukaran ukuran (size exchange) berlaku 2x24 jam setelah pesanan diterima dengan syarat tag label utuh dan produk belum digunakan olahraga.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Products Section -->
+        <div class="detail-related-section">
+          <h2 class="detail-section-title" style="margin-bottom: 2rem;">
+            <i class="fa-solid fa-layer-group" style="color: var(--primary); margin-right: 0.5rem;"></i>
+            Produk LapakSports Terkait
+          </h2>
+          <div class="products-grid" id="modalRelatedGrid">
+            <!-- Dynamically populated related product cards -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mobile Sticky Bottom Action Bar -->
+      <div class="mobile-sticky-action-bar" id="mobileDetailBar">
+        <div class="mobile-bar-info">
+          <span class="mobile-bar-label">Harga Spesial</span>
+          <span class="mobile-bar-price" id="mobileBarPrice">Rp 0</span>
+        </div>
+        <a href="#" id="mobileBarWaBtn" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp mobile-bar-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Beli via WA</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FLOATING ELEMENTS (WHATSAPP & BACK TO TOP)
+       ========================================================================== -->
+  <div class="floating-container">
+    <!-- Back to Top Button -->
+    <button class="btn-back-to-top" id="backToTopBtn" aria-label="Kembali ke atas">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6285219371052?text=Halo%20LapakSports,%20saya%20ingin%20bertanya%20tentang%20produk%20apparel%20olahraga." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="btn-floating-wa" 
+       aria-label="Chat WhatsApp LapakSports">
+      <div class="pulse-ring"></div>
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>Chat Kami</span>
+    </a>
+  </div>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT LOGIC
+       ========================================================================== -->
+  <script>
+    /* ==========================================================================
+       1. DATA PRODUK KATALOG LAPAKSPORTS
+       Anda dapat dengan mudah menambah, mengedit, atau menghapus item produk di sini.
+       Kategori: "Baju", "Celana Panjang", "Celana Pendek", "Rok", "Topi", "Apparel Lainnya"
+       ========================================================================== */
+    const products = [
+      {
+        id: 101,
+        name: "Baju Lengan Panjang Cewek Under Armour CL40#",
+        category: "Baju",
+        sportCategory: "Senam",
+        price: 110000,
+        oldPrice: 165000,
+        tagline: "OFFICIAL WOMEN ACTIVE PERFORMANCE WEAR",
+        image: "cl40-longsleeve.jpg",
+        galleryThumbs: ["cl40-longsleeve.jpg", "jersey-pendek-wanita.png", "cl40-longsleeve.jpg"],
+        description: "Baju olahraga lengan panjang khusus wanita Under Armour CL40# dengan material stretch dry-fit premium yang lentur, adem, dan cepat kering. Sangat nyaman untuk senam aerobik, yoga, gym, lari, maupun outfit olahraga sehari-hari. Memberikan fleksibilitas gerak maksimal.",
+        badge: "New",
+        colors: ["Pink", "Hitam", "Abu-abu"],
+        sizes: ["M", "L", "XL", "2XL"]
+      },
+      {
+        id: 102,
+        name: "Jersey Olahraga Import Wanita (Baju Lengan Pendek)",
+        category: "Baju",
+        sportCategory: "Senam",
+        price: 95000,
+        oldPrice: 145000,
+        tagline: "PREMIUM IMPORT WOMEN DRY-FIT APPAREL",
+        image: "jersey-pendek-wanita.png",
+        galleryThumbs: ["jersey-pendek-wanita.png", "cl40-longsleeve.jpg", "jersey-pendek-wanita.png"],
+        description: "Baju olahraga lengan pendek import khusus wanita dengan bahan mikro dry-fit premium berteknologi breathable. Sangat adem, ringan, lentur, dan menyerap keringat optimal. Aksen garis 3-stripes sporty di lengan, cocok untuk senam aerobik, running, gym, maupun paduan hijab olahraga.",
+        badge: "New",
+        colors: ["Navy", "Salem", "Hitam"],
+        sizes: ["M", "L", "XL", "2XL"]
+      },
+      {
+        id: 103,
+        name: "Kaos Running Pendek Pria (Baju Lari & Gym Cowok)",
+        category: "Baju",
+        sportCategory: "Lari",
+        price: 95000,
+        oldPrice: 145000,
+        tagline: "HIGH PERFORMANCE MEN'S ATHLETIC TEE",
+        image: "kaos-running-cowok.png",
+        galleryThumbs: ["kaos-running-cowok.png", "jaket-running-micro.jpg", "kaos-running-cowok.png"],
+        description: "Baju olahraga lari dan gym cowok (kaos running pendek pria) dengan bahan mikro dry-fit elastis berpori yang cepat kering, sangat sejuk, dan tidak lengket saat berkeringat. Potongan atletik modern yang fleksibel, sangat pas untuk jogging, lari pagi, marathon, workout di gym, maupun training.",
+        badge: "New",
+        colors: ["Abu-abu", "Hitam", "Navy"],
+        sizes: ["M", "L", "XL", "2XL"]
+      },
+      {
+        id: 104,
+        name: "Jaket Running Micro ZXA36 (Windbreaker Sport)",
+        category: "Apparel Lainnya",
+        sportCategory: "Lari",
+        price: 150000,
+        oldPrice: 225000,
+        tagline: "ALL-WEATHER WINDBREAKER SPORT HOODIE",
+        image: "jaket-running-micro.jpg",
+        galleryThumbs: ["jaket-running-micro.jpg", "kaos-running-cowok.png", "jaket-running-micro.jpg"],
+        description: "Jaket lari windbreaker micro seri ZXA36 dengan bahan parasut mikro premium yang ringan, windproof (tahan angin), dan breathable. Dilengkapi hoodie pelindung, ritsleting depan kuat, saku samping aman, serta ujung lengan elastis. Sangat nyaman untuk jogging, lari pagi, gym, maupun bersepeda.",
+        badge: "New",
+        colors: ["Dusty Pink", "Merah", "Hitam"],
+        sizes: ["M", "L", "XL", "2XL"]
+      },
+      {
+        id: 105,
+        name: "Baju Running Wanita WJE32 (Baju Olahraga Lengan Pendek)",
+        category: "Baju",
+        sportCategory: "Lari",
+        price: 95000,
+        oldPrice: 145000,
+        tagline: "OFFICIAL WOMEN RUNNING & ACTIVE PERFORMANCE",
+        image: "baju-running-wje32-hitam.jpg",
+        galleryThumbs: [
+          "baju-running-wje32-hitam.jpg",
+          "baju-running-wje32-pink.jpg",
+          "baju-running-wje32-ungu.jpg"
+        ],
+        description: "Baju olahraga running lengan pendek khusus wanita seri WJE32 dengan bahan dry-fit mikro elastis premium berteknologi breathable. Sangat adem, ringan, lentur, dan menyerap keringat optimal. Potongan sporty feminin yang sangat nyaman untuk lari, jogging, senam aerobik, gym workout, tenis, maupun padel.",
+        badge: "New",
+        colors: ["Hitam", "Pink", "Ungu"],
+        sizes: ["M", "L", "XL", "2XL"],
+        features: [
+          "Bahan Dry-Fit Mikro-Pori berteknologi sirkulasi udara maksimal",
+          "Kain 4-Way Stretch elastis, sangat fleksibel mengikuti kontur gerak tubuh",
+          "Jahitan ganda rapi (flatlock) anti-gesekan kulit dan tidak mudah sobek",
+          "Quick Dry & Odor-Free: Cepat menyerap & menguapkan keringat"
+        ]
+      },
+      {
+        id: 106,
+        name: "Jaket Running Micro Serut JA18 (Windbreaker Sport)",
+        category: "Apparel Lainnya",
+        sportCategory: "Lari",
+        price: 150000,
+        oldPrice: 225000,
+        tagline: "ALL-WEATHER WINDBREAKER MICRO SERUT",
+        image: "jaket-running-micro-serut-hitam.jpg",
+        galleryThumbs: [
+          "jaket-running-micro-serut-hitam.jpg",
+          "jaket-running-micro-serut-dusty.jpg",
+          "jaket-running-micro-serut-magenta.jpg"
+        ],
+        description: "Jaket running micro parasut seri JA18 model serut tali aktif pada lengan dan pinggang bawah. Material parasut mikro premium yang windproof (tahan angin), ringan, dan breathable. Desain sporty modern dengan kerah tegak tinggi (high-neck), ritsleting kontras elegan, dan saku depan berpenutup aman. Sangat modis dan nyaman untuk lari, jogging, senam, gym, maupun outfit harian.",
+        badge: "New",
+        colors: ["Hitam", "Dusty", "Magenta"],
+        sizes: ["M", "L", "XL", "2XL"],
+        features: [
+          "Bahan Parasut Mikro High-Density tahan angin (windproof) & percikan air",
+          "Aksen tali serut elastis aktif di bagian lengan dan pinggang bawah untuk fitting fleksibel",
+          "Kerah tegak (high-neck) melindungi leher dari terpaan angin dingin saat lari",
+          "Saku depan multifungsi dengan ritsleting aman dan ventilasi sejuk anti-gerah"
+        ]
+      },
+      {
+        id: 107,
+        name: "Rok Legging Panjang X893 (Celana Senam 2-in-1)",
+        category: "Rok",
+        sportCategory: "Senam",
+        price: 135000,
+        oldPrice: 195000,
+        tagline: "OFFICIAL 2-IN-1 ACTIVE SKIRT LEGGING",
+        image: "rok-legging-x893-dusty.jpg",
+        galleryThumbs: [
+          "rok-legging-x893-dusty.jpg",
+          "rok-legging-x893-hitam.jpg"
+        ],
+        description: "Rok legging panjang wanita seri X893 dengan desain 2-in-1 modis (rok rempel tumpuk menyatu dengan celana legging panjang hingga semata kaki). Terbuat dari material spandex elastis premium yang adem, lentur 4-arah, dan tidak menerawang. Desain pinggang tinggi (high-waist) memberikan kenyamanan ekstra dan siluet ramping saat senam aerobik, zumba, yoga, lari, tenis, maupun paduan hijab olahraga.",
+        badge: "New",
+        colors: ["Dusty", "Hitam"],
+        sizes: ["M", "L", "XL", "2XL"],
+        features: [
+          "Desain 2-in-1 Modis: Perpaduan rok rempel tumpuk anggun dan legging panjang elastis",
+          "Bahan Premium Stretch Spandex yang adem, lentur 4 arah, dan tidak menerawang",
+          "Pinggang Tinggi (High-Waist) elastis yang menyamarkan perut & pas menopang badan",
+          "Sangat cocok untuk senam aerobik, yoga, zumba, lari, tenis, maupun hijab sport"
+        ]
+      },
+      {
+        id: 108,
+        name: "Baju Lengan Panjang Wanita AD6602 (Kaos Olahraga Long Sleeve)",
+        category: "Baju",
+        sportCategory: "Senam",
+        price: 110000,
+        oldPrice: 165000,
+        tagline: "PREMIUM WOMEN LONG SLEEVE ACTIVE TEE",
+        image: "baju-panjang-wanita-ad6602-lilac.jpg",
+        galleryThumbs: [
+          "baju-panjang-wanita-ad6602-lilac.jpg",
+          "baju-panjang-wanita-ad6602-varian.jpg"
+        ],
+        description: "Baju olahraga lengan panjang khusus wanita seri AD6602 berbahan mikro dry-fit stretch premium yang lentur, adem, dan menyerap keringat seketika. Dilengkapi manset lubang jempol (thumbhole) sporty yang menjaga lengan tetap rapi saat bergerak aktif. Sangat nyaman dan anggun untuk senam aerobik, yoga, zumba, gym workout, lari, maupun paduan hijab olahraga.",
+        badge: "New",
+        colors: ["Lilac", "Hijau", "Pink", "Hitam", "Dusty Pink"],
+        sizes: ["M", "L", "XL", "2XL"],
+        features: [
+          "Material Dry-Fit Mikro-Stretch: Sangat lembut, adem, dan lentur mengikuti lekuk gerak tubuh",
+          "Desain Manset Thumbhole (Lubang Jempol): Lengan tidak mudah terangkat saat aktif bergerak",
+          "Anti-UV & Quick Dry: Melindungi kulit dari terik matahari serta cepat menyerap keringat",
+          "Cocok Untuk Segala Aktivitas: Ideal untuk senam aerobik, yoga, gym, lari, maupun hijab sport"
+        ]
+      },
+      {
+        id: 2,
+        name: "Dry Fit Sport Shirt",
+        category: "Baju",
+        sportCategory: "Gym",
+        price: 75000,
+        image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=80",
+        description: "Kaos olahraga dry-fit elastis untuk workout, gym, mau pun santai. Menyerap keringat dalam sekejap dan cepat kering tanpa meninggalkan bau apek.",
+        badge: "New"
+      },
+      {
+        id: 3,
+        name: "Training Pants Micro Nylon",
+        category: "Celana Panjang",
+        sportCategory: "Gym",
+        price: 135000,
+        image: "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=600&auto=format&fit=crop&q=80",
+        description: "Celana panjang olahraga dengan bahan mikro nilon elastis. Dilengkapi saku ritsleting aman untuk smartphone serta tali pinggang fleksibel.",
+        badge: "Best Seller"
+      },
+      {
+        id: 4,
+        name: "Sport Shorts Premium",
+        category: "Celana Pendek",
+        sportCategory: "Badminton",
+        price: 65000,
+        image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&auto=format&fit=crop&q=80",
+        description: "Celana pendek olahraga fleksibel dengan jahitan kuat ganda. Cocok untuk badminton, latihan futsal, dan fitness harian.",
+        badge: "Promo"
+      },
+      {
+        id: 5,
+        name: "Running Shorts 2-in-1",
+        category: "Celana Pendek",
+        sportCategory: "Lari",
+        price: 95000,
+        image: "https://images.unsplash.com/photo-1508215885820-4523e431397b?w=600&auto=format&fit=crop&q=80",
+        description: "Celana pendek lari dengan inner compression legging yang mencegah gesekan paha dan menjaga otot tetap hangat saat bergerak aktif.",
+        badge: "New"
+      },
+      {
+        id: 6,
+        name: "Sport Skirt Tennis & Senam",
+        category: "Rok",
+        sportCategory: "Senam",
+        price: 90000,
+        image: "https://images.unsplash.com/photo-1579758629938-03607ccdbaba?w=600&auto=format&fit=crop&q=80",
+        description: "Rok olahraga modis dengan celana pendek fungsional di bagian dalam (skort). Nyaman untuk senam aerobik, tenis, padel, dan zumba.",
+        badge: "Best Seller"
+      },
+      {
+        id: 7,
+        name: "Aerobic Active Sport Skirt",
+        category: "Rok",
+        sportCategory: "Senam",
+        price: 88000,
+        image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&auto=format&fit=crop&q=80",
+        description: "Desain rok senam berpinggang elastis tinggi (high-waist) yang memberikan siluet ramping dan rasa percaya diri ekstra saat bergerak bebas.",
+        badge: "Promo"
+      },
+      {
+        id: 8,
+        name: "Sports Cap Breathable",
+        category: "Aksesoris",
+        sportCategory: "Lari",
+        price: 45000,
+        image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&auto=format&fit=crop&q=80",
+        description: "Topi olahraga berbobot ringan dengan panel mesh sirkulasi udara dan strap belakang yang mudah disesuaikan. Melindungi kepala dari terik sinar matahari saat jogging atau bersepeda.",
+        badge: "Best Seller",
+        colors: ["Hitam", "Putih", "Navy", "Abu-abu"]
+      },
+      {
+        id: 9,
+        name: "Training Apparel Set",
+        category: "Baju",
+        sportCategory: "Gym",
+        price: 165000,
+        image: "https://images.unsplash.com/photo-1483721074573-41c305c7476f?w=600&auto=format&fit=crop&q=80",
+        description: "Setelan apparel olahraga yang terdiri dari baju dry-fit dan celana elastis senada. Solusi praktis dan stylish untuk sesi workout harianmu.",
+        badge: "Best Seller"
+      },
+      {
+        id: 10,
+        name: "Jersey Pro Futsal Match",
+        category: "Baju",
+        sportCategory: "Sepak Bola",
+        price: 89000,
+        image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=600&auto=format&fit=crop&q=80",
+        description: "Jersey sepak bola dan futsal dengan material honeycomb mesh yang licin, adem, dan menyerap keringat secara optimal selama pertandingan.",
+        badge: "New"
+      },
+      {
+        id: 11,
+        name: "Swim Rashguard UV Shield",
+        category: "Apparel Lainnya",
+        sportCategory: "Renang",
+        price: 115000,
+        image: "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&auto=format&fit=crop&q=80",
+        description: "Baju renang lengan panjang dengan perlindungan anti-UV UPF 50+ dan bahan elastis 4-way stretch untuk kenyamanan berenang tanpa batasan.",
+        badge: "Best Seller"
+      },
+      {
+        id: 12,
+        name: "Sport Duffel & Gym Bag",
+        category: "Aksesoris",
+        sportCategory: "Gym",
+        price: 125000,
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&auto=format&fit=crop&q=80",
+        description: "Tas olahraga serbaguna dengan kompartemen khusus sepatu dan pakaian basah. Tahan percikan air dan kuat untuk membawa seluruh perlengkapan latihanmu.",
+        badge: "Promo",
+        colors: ["Hitam", "Abu-abu", "Navy"]
+      },
+      {
+        id: 13,
+        name: "Kaos Kaki Olahraga Anti-Slip Grip",
+        category: "Aksesoris",
+        sportCategory: "Sepak Bola",
+        price: 25000,
+        image: "https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=600&auto=format&fit=crop&q=80",
+        description: "Kaos kaki olahraga dengan rubber grip bintik anti-slip di bagian telapak. Memberikan cengkeraman maksimal di dalam sepatu, mencegah kaki lecet, dan menyerap keringat saat futsal, lari, atau badminton.",
+        badge: "Best Seller",
+        colors: ["Hitam", "Putih", "Abu-abu"]
+      },
+      {
+        id: 14,
+        name: "Deker Pelindung Tulang Kering (Shin Guard)",
+        category: "Aksesoris",
+        sportCategory: "Sepak Bola",
+        price: 45000,
+        image: "https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?w=600&auto=format&fit=crop&q=80",
+        description: "Deker pelindung tulang kering kaki dengan cangkang keras PP peredam benturan dan lapisan dalam busa EVA lembut. Ringan dan sangat aman untuk futsal serta sepak bola.",
+        badge: "New",
+        colors: ["Hitam", "Biru", "Putih"],
+        sizes: ["M (Remaja)", "L (Dewasa)"]
+      },
+      {
+        id: 15,
+        name: "Kacamata Renang Anti-Fog UV Shield",
+        category: "Aksesoris",
+        sportCategory: "Renang",
+        price: 55000,
+        image: "https://images.unsplash.com/photo-1560090995-01632a28895b?w=600&auto=format&fit=crop&q=80",
+        description: "Kacamata renang dengan lensa anti-embun bening dan lapisan proteksi sinar UV. Dilengkapi silikon elastis kedap air yang tidak menekan kelopak mata.",
+        badge: "Best Seller",
+        colors: ["Hitam", "Biru", "Pink"]
+      },
+      {
+        id: 16,
+        name: "Pelampung Renang EVA Kickboard",
+        category: "Aksesoris",
+        sportCategory: "Renang",
+        price: 45000,
+        image: "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=600&auto=format&fit=crop&q=80",
+        description: "Papan pelampung renang berbahan busa EVA densitas tinggi yang padat, tahan lama, dan berdaya apung tinggi. Membantu latihan gaya kayuhan kaki bagi pemula hingga mahir.",
+        badge: "Promo",
+        colors: ["Biru", "Pink", "Kuning"]
+      },
+      {
+        id: 17,
+        name: "Speed Jump Rope / Tali Skipping Atletik",
+        category: "Aksesoris",
+        sportCategory: "Gym",
+        price: 35000,
+        image: "https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=600&auto=format&fit=crop&q=80",
+        description: "Tali skipping dengan kawat baja berlapis pelindung PVC dan mekanisme bearing 360° yang berputar kencang tanpa terbelit. Efektif untuk pemanasan, kardio, dan pembakaran kalori.",
+        badge: "Best Seller",
+        colors: ["Hitam", "Merah", "Biru"]
+      },
+      {
+        id: 18,
+        name: "Bola Futsal & Sepak Bola Match Pro",
+        category: "Aksesoris",
+        sportCategory: "Sepak Bola",
+        price: 120000,
+        image: "https://images.unsplash.com/photo-1614632537423-1e6c2e7e0aab?w=600&auto=format&fit=crop&q=80",
+        description: "Bola olahraga bahan kulit sintetis PU berkualitas dengan jahitan mesin rapi dan presisi pantulan tinggi. Awet digunakan di lapangan rumput sintetis maupun semen.",
+        badge: "New",
+        colors: ["Putih-Hitam", "Orange-Biru"],
+        sizes: ["Size 4 (Futsal)", "Size 5 (Sepak Bola)"]
+      }
+    ];
+
+    /* ==========================================================================
+       2. STATE & DOM ELEMENTS
+       ========================================================================== */
+    let currentCategory = "Semua";
+    let searchQuery = "";
+
+    const productsGrid = document.getElementById("productsGrid");
+    const searchInput = document.getElementById("productSearch");
+    const searchClearBtn = document.getElementById("searchClearBtn");
+    const categoryPills = document.querySelectorAll(".category-btn");
+    const siteHeader = document.getElementById("siteHeader");
+    const mobileToggle = document.getElementById("mobileToggle");
+    const navMenu = document.getElementById("navMenu");
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    // Modal elements (Supersenter Full Detail System)
+    const productModal = document.getElementById("productModal");
+    const modalCloseBtn = document.getElementById("modalCloseBtn");
+    const modalImage = document.getElementById("modalImage");
+    const modalGalleryThumbs = document.getElementById("modalGalleryThumbs");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalTagline = document.getElementById("modalTagline");
+    const modalRatingScore = document.getElementById("modalRatingScore");
+    const modalRatingCount = document.getElementById("modalRatingCount");
+    const modalPrice = document.getElementById("modalPrice");
+    const modalOldPrice = document.getElementById("modalOldPrice");
+    const modalDiscountTag = document.getElementById("modalDiscountTag");
+    const modalCategoryBadge = document.getElementById("modalCategoryBadge");
+    const modalTagBadge = document.getElementById("modalTagBadge");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalFeaturesList = document.getElementById("modalFeaturesList");
+    const modalWaBtn = document.getElementById("modalWaBtn");
+    const modalFullDesc = document.getElementById("modalFullDesc");
+    const modalSpecsTableBody = document.getElementById("modalSpecsTableBody");
+    const modalPackageList = document.getElementById("modalPackageList");
+    const modalRelatedGrid = document.getElementById("modalRelatedGrid");
+    const detailBreadcrumbCat = document.getElementById("detailBreadcrumbCat");
+    const detailBreadcrumbTitle = document.getElementById("detailBreadcrumbTitle");
+    const mobileDetailBar = document.getElementById("mobileDetailBar");
+    const mobileBarPrice = document.getElementById("mobileBarPrice");
+    const mobileBarWaBtn = document.getElementById("mobileBarWaBtn");
+
+    /* ==========================================================================
+       3. UTILITIES
+       ========================================================================== */
+    function formatRupiah(number) {
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      }).format(number);
+    }
+
+    function getBadgeClass(badge) {
+      const b = (badge || "").toLowerCase();
+      if (b.includes("best")) return "badge-bestseller";
+      if (b.includes("new")) return "badge-new";
+      return "badge-promo";
+    }
+
+    /* Build WhatsApp Link with Dynamic Message & Price */
+    function buildWhatsAppUrl(product, price) {
+      const phoneNumber = "6285219371052";
+      let name = "";
+      let priceText = "";
+
+      if (typeof product === "object" && product !== null) {
+        name = product.name;
+        if (product.price) priceText = formatRupiah(product.price);
+      } else {
+        name = product;
+        if (price) priceText = typeof price === "number" ? formatRupiah(price) : price;
+      }
+
+      const priceSnippet = priceText ? ` seharga ${priceText}` : "";
+      const message = `Halo LapakSports, saya tertarik memesan produk ${name}${priceSnippet}. Mohon info ketersediaan stoknya. Terima kasih!`;
+      return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    }
+
+    /* Handler jika link Shopee masih placeholder */
+    function handleShopeeClick(e, anchor) {
+      const href = anchor.getAttribute("href");
+      if (href === "SHOPEE_URL_DISINI") {
+        e.preventDefault();
+        alert("Link Shopee LapakSports akan segera tersedia. Untuk pemesanan cepat silakan melalui Tokopedia atau WhatsApp 085219371052!");
+      }
+    }
+
+    /* ==========================================================================
+       4. RENDER PRODUK
+       ========================================================================== */
+    function renderProducts() {
+      const filtered = products.filter(item => {
+        // Category Filter
+        let matchesCategory = (currentCategory === "Semua") || (item.category === currentCategory);
+        if (currentCategory === "Aksesoris") {
+          matchesCategory = (item.category === "Aksesoris" || item.category === "Topi" || (item.name && item.name.toLowerCase().includes("topi")));
+        } else if (currentCategory === "Topi") {
+          matchesCategory = (item.category === "Topi" || (item.name && item.name.toLowerCase().includes("topi")));
+        } else if (currentCategory === "Celana Panjang") {
+          matchesCategory = (item.category === "Celana Panjang" || (item.name && item.name.toLowerCase().includes("rok legging")));
+        }
+        
+        // Search Filter
+        const q = searchQuery.toLowerCase().trim();
+        const matchesSearch = !q || 
+          item.name.toLowerCase().includes(q) || 
+          item.category.toLowerCase().includes(q) ||
+          (item.sportCategory && item.sportCategory.toLowerCase().includes(q)) ||
+          item.description.toLowerCase().includes(q);
+
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        productsGrid.innerHTML = `
+          <div class="catalog-empty">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h3 style="font-size: 1.3rem; color: var(--dark); margin-bottom: 0.5rem;">Produk tidak ditemukan</h3>
+            <p style="color: var(--gray-500); margin-bottom: 1.25rem;">Coba gunakan kata kunci pencarian lain atau pilih kategori apparel yang tersedia.</p>
+            <button class="btn btn-outline btn-sm" onclick="resetFilters()">Tampilkan Semua Produk</button>
+          </div>
+        `;
+        return;
+      }
+
+      productsGrid.innerHTML = filtered.map(item => `
+        <article class="product-card" data-id="${item.id}">
+          <div class="product-image-box" onclick="openProductModal(${item.id})" role="button" tabindex="0" title="Klik untuk melihat detail ${item.name}">
+            <span class="product-badge-tag ${getBadgeClass(item.badge)}">${item.badge}</span>
+            <img src="${item.image}" alt="${item.name}" class="product-thumb" loading="lazy">
+          </div>
+          <div class="product-details">
+            <div class="product-category">${item.category} &bull; ${item.sportCategory || 'Sport'}</div>
+            <h3 class="product-title" onclick="openProductModal(${item.id})" title="Klik untuk melihat detail ${item.name}">${item.name}</h3>
+            ${item.colors ? `
+              <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--gray-500); margin-bottom: 0.4rem;">
+                <i class="fa-solid fa-palette" style="color: var(--primary);"></i>
+                <span>${item.colors.join(', ')}</span>
+                ${item.sizes ? `&bull; <span>Size ${item.sizes.join('/')}</span>` : ''}
+              </div>
+            ` : ''}
+            <div class="product-price">${formatRupiah(item.price)}</div>
+            <div class="product-actions">
+              <button class="btn btn-detail" onclick="openProductModal(${item.id})">
+                <i class="fa-regular fa-eye"></i> Lihat Detail
+              </button>
+              <a href="${buildWhatsAppUrl(item)}" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn-card-wa" 
+                 title="Pesan via WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function resetFilters() {
+      currentCategory = "Semua";
+      searchQuery = "";
+      searchInput.value = "";
+      searchClearBtn.style.display = "none";
+      
+      categoryPills.forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.category === "Semua");
+      });
+      renderProducts();
+    }
+
+    /* Filter dari Kategori Olahraga Section */
+    function filterBySport(sportName) {
+      if (sportName === "Aksesoris") {
+        currentCategory = "Aksesoris";
+        searchQuery = "";
+        searchInput.value = "";
+        searchClearBtn.style.display = "none";
+        
+        categoryPills.forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.category === "Aksesoris");
+        });
+      } else {
+        searchQuery = sportName;
+        searchInput.value = sportName;
+        searchClearBtn.style.display = "block";
+        currentCategory = "Semua";
+        
+        categoryPills.forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.category === "Semua");
+        });
+      }
+
+      renderProducts();
+
+      // Smooth scroll to catalog
+      const target = document.getElementById("produk");
+      if (target) {
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = target.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }
+
+    /* ==========================================================================
+       5. MODAL DETAIL LOGIC & HELPERS (SUPERSENTER FULL PRODUCT SYSTEM)
+       ========================================================================== */
+    let currentModalProduct = null;
+    let selectedColor = "";
+    let selectedSize = "";
+
+    /* Helper: Generate Key Features based on Product Type */
+    function getProductFeatures(product) {
+      if (product.features && product.features.length > 0) return product.features;
+      
+      const cat = (product.category || "").toLowerCase();
+      const sport = (product.sportCategory || "").toLowerCase();
+      const name = (product.name || "").toLowerCase();
+
+      if (cat.includes("baju") || name.includes("jersey") || name.includes("kaos")) {
+        return [
+          "Bahan Dry-Fit Mikro-Pori berteknologi sirkulasi udara maksimal",
+          "Kain 4-Way Stretch elastis, sangat fleksibel mengikuti kontur gerak tubuh",
+          "Jahitan ganda rapi (flatlock) anti-gesekan kulit dan tidak mudah sobek",
+          "Cepat menyerap keringat, cepat kering (quick dry) dan anti bau apek"
+        ];
+      } else if (cat.includes("celana") || name.includes("pants") || name.includes("shorts")) {
+        return [
+          "Material Micro Stretch berkualitas tinggi, ringan dan tidak membatasi langkah",
+          "Karet pinggang elastis tebal dilengkapi tali serut pengunci yang tidak mudah kendur",
+          "Dilengkapi saku multifungsi dengan ritsleting aman untuk smartphone dan barang esensial",
+          "Konstruksi potongan atletik ergonomis yang kuat untuk latihan intensitas tinggi"
+        ];
+      } else if (cat.includes("rok") || name.includes("skirt")) {
+        return [
+          "Desain 2-in-1 modis dengan celana pendek fungsional tersembunyi di bagian dalam (skort)",
+          "Pinggang tinggi (high-waist) elastis memberikan siluet ramping dan aman",
+          "Kain sejuk, lentur, jatuh anggun tanpa membatasi kelincahan gerak di lapangan",
+          "Sangat cocok untuk tenis, badminton, senam aerobik, yoga, zumba, dan padel"
+        ];
+      } else if (name.includes("jaket") || cat.includes("jaket") || name.includes("windbreaker") || cat.includes("apparel lainnya")) {
+        return [
+          "Bahan Micro Parasut High-Density tahan angin (windproof) dan percikan air",
+          "Dilengkapi hoodie pelindung kepala ergonomis dan ritsleting depan halus presisi",
+          "Ringan, sejuk, dan tidak pengap saat dipakai berlari atau bersepeda di pagi/malam hari",
+          "Praktis dilipat ringkas untuk dibawa ke tempat gym, arena lari, atau travelling"
+        ];
+      } else if (cat.includes("aksesoris") || name.includes("topi") || name.includes("tas") || name.includes("kaos kaki") || name.includes("deker") || name.includes("kacamata") || name.includes("pelampung") || name.includes("skipping") || name.includes("bola")) {
+        return [
+          "Dibuat dari material standar peralatan olahraga berkualitas tinggi dan tahan benturan",
+          "Desain ergonomis yang dirancang khusus untuk kenyamanan dan keamanan atlet",
+          "Membantu memaksimalkan efisiensi latihan, proteksi tubuh, serta performa fisik",
+          "Durabilitas teruji awet untuk pemakaian harian maupun sesi kompetisi intensif"
+        ];
+      }
+      return [
+        "Material premium berkualitas tinggi dengan finishing jahitan presisi",
+        "Kenyamanan pemakaian tingkat tinggi untuk aktivitas olahraga dan casual harian",
+        "Desain atletik modern yang menambah rasa percaya diri saat aktif bergerak",
+        "Mudah dicuci, warna tahan lama tidak mudah luntur dan cepat kering"
+      ];
+    }
+
+    /* Helper: Generate Tagline based on Product Type */
+    function getProductTagline(product) {
+      if (product.tagline) return product.tagline;
+      const cat = (product.category || "").toLowerCase();
+      const sport = (product.sportCategory || "").toLowerCase();
+      const name = (product.name || "").toLowerCase();
+      
+      if (name.includes("under armour") || name.includes("cl40")) return "OFFICIAL WOMEN ACTIVE PERFORMANCE WEAR";
+      if (name.includes("jersey") || name.includes("import")) return "PREMIUM DRY-FIT WOMEN SPORT APPAREL";
+      if (name.includes("kaos running") || name.includes("pria")) return "HIGH PERFORMANCE MEN'S ATHLETIC TEE";
+      if (name.includes("jaket running") || name.includes("micro")) return "ALL-WEATHER WINDBREAKER SPORT HOODIE";
+      if (cat.includes("baju")) return "HIGH PERFORMANCE ATHLETIC WEAR";
+      if (cat.includes("celana")) return "FLEXIBLE FIT & ACTIVE MOVEMENT";
+      if (cat.includes("rok")) return "STYLISH & FUNCTIONAL SPORT SKIRT";
+      if (cat.includes("aksesoris")) return "ESSENTIAL ATHLETIC PERFORMANCE GEAR";
+      return "OFFICIAL LAPAKSPORTS PERFORMANCE";
+    }
+
+    /* Helper: Generate Full Description Paragraphs */
+    function getProductFullDesc(product) {
+      if (product.fullDesc) return product.fullDesc;
+      const p1 = `<strong>${product.name}</strong> dari LapakSports dirancang khusus untuk memenuhi standar apparel olahraga modern. Menggunakan kombinasi material berkualitas pilihan yang mengutamakan kenyamanan, fleksibilitas gerak tubuh, dan daya tahan jangka panjang.`;
+      const p2 = `Dengan fitur sirkulasi udara berpori aktif, produk ini mampu menjaga suhu tubuh tetap sejuk dan mengalirkan uap keringat secara cepat saat Anda melakukan aktivitas dengan intensitas tinggi, mulai dari sesi jogging, senam, gym workout, hingga pertandingan kompetitif.`;
+      const p3 = `Setiap jahitan diproses dengan standar kontrol kualitas (QC) ketat agar tidak mudah koyak serta lembut menyentuh kulit tanpa memicu iritasi. Dapatkan keaslian dan jaminan kualitas terbaik langsung dari LapakSports dengan garansi kemudahan penukaran ukuran.`;
+      return `<p>${p1}</p><p>${p2}</p><p>${p3}</p>`;
+    }
+
+    /* Helper: Generate Specs Table Object */
+    function getProductSpecs(product) {
+      if (product.specs) return product.specs;
+      const cat = (product.category || "").toLowerCase();
+      const sport = product.sportCategory || "Multisport";
+      
+      let bahan = "Premium Micro Dry-Fit Elastane";
+      let karakteristik = "Elastis 4 arah, adem, cepat kering, ringan";
+      let model = "Regular Athletic Fit";
+
+      if (cat.includes("celana")) {
+        bahan = "Nylon Micro Fiber + Spandex";
+        karakteristik = "Kuat, elastis, cepat kering, anti-kusut";
+        model = "Athletic Fit dengan karet & tali pinggang";
+      } else if (cat.includes("rok")) {
+        bahan = "Polyester Elastane Breathable + Inner Shorts";
+        karakteristik = "Lembut, jatuh rapi, elastis tinggi, tidak menerawang";
+        model = "Skort 2-in-1 (Rok + Celana Pendek Dalam)";
+      } else if (product.name.toLowerCase().includes("jaket")) {
+        bahan = "Micro Parasut Polyester High-Density";
+        karakteristik = "Windproof, water-repellent ringan, sejuk di dalam";
+        model = "Windbreaker Sport dengan Hoodie & Resleting Depan";
+      } else if (cat.includes("aksesoris")) {
+        bahan = "Polycarbonate / Silikon / EVA / PP Komposit Keras";
+        karakteristik = "Tahan benturan, awet, higienis, mudah dibersihkan";
+        model = "Ergonomic Sports Gear";
+      }
+
+      return {
+        "Kategori": `${product.category} (${sport})`,
+        "Material Utama": bahan,
+        "Karakteristik Kain": karakteristik,
+        "Model & Potongan": model,
+        "Rekomendasi": `Aktivitas ${sport}, Workout, Latihan & Olahraga Harian`,
+        "Panduan Cuci": "Cuci suhu normal, gunakan deterjen lembut, hindari pemutih & jemur teduh"
+      };
+    }
+
+    /* Helper: Generate Package Items */
+    function getProductPackage(product) {
+      if (product.packageContents && product.packageContents.length > 0) {
+        return product.packageContents;
+      }
+      return [
+        `1x Unit ${product.name} (Original LapakSports)`,
+        "1x Kemasan Polybag Higienis Anti-Debu",
+        "1x Kartu Tag Resmi & Garansi Penukaran Ukuran"
+      ];
+    }
+
+    /* Helper: Generate Multi-Image Thumbs for Gallery */
+    function getProductGalleryThumbs(product) {
+      if (product.galleryThumbs && product.galleryThumbs.length > 0) {
+        return product.galleryThumbs;
+      }
+      return [
+        product.image,
+        product.image
+      ];
+    }
+
+    function updateModalWhatsAppUrl() {
+      if (!currentModalProduct) return;
+      const phoneNumber = "6285219371052";
+      let details = [];
+      if (selectedColor) details.push(`Warna: ${selectedColor}`);
+      if (selectedSize) details.push(`Ukuran: ${selectedSize}`);
+      
+      const priceText = formatRupiah(currentModalProduct.price);
+      const variantStr = details.length > 0 ? `\n- Pilihan Varian: ${details.join(", ")}` : "";
+      const message = `Halo LapakSports, saya ingin memesan:\n- Produk: ${currentModalProduct.name}\n- Harga: ${priceText}${variantStr}\n\nMohon info ketersediaan stok dan cara pembayarannya. Terima kasih!`;
+      const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      
+      if (modalWaBtn) modalWaBtn.href = waUrl;
+      if (mobileBarWaBtn) mobileBarWaBtn.href = waUrl;
+    }
+
+    function openProductModal(productId, pushState = true) {
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+      currentModalProduct = product;
+
+      // 1. Breadcrumbs
+      if (detailBreadcrumbCat) detailBreadcrumbCat.textContent = product.category;
+      if (detailBreadcrumbTitle) detailBreadcrumbTitle.textContent = product.name;
+
+      // 2. Main Title, Tagline, Badges
+      modalTitle.textContent = product.name;
+      if (modalTagline) modalTagline.textContent = getProductTagline(product);
+      modalCategoryBadge.textContent = `${product.category} / ${product.sportCategory || 'Sport'}`;
+      modalTagBadge.textContent = product.badge;
+      modalTagBadge.className = `badge-pill ${getBadgeClass(product.badge)}`;
+      modalDesc.textContent = product.description;
+
+      // 3. Price, Old Price, Discount Tag
+      const currentPrice = product.price;
+      const oldPrice = product.oldPrice || (Math.round((currentPrice * 1.35) / 5000) * 5000);
+      const discountPct = Math.round((1 - (currentPrice / oldPrice)) * 100);
+
+      modalPrice.textContent = formatRupiah(currentPrice);
+      if (modalOldPrice) modalOldPrice.textContent = formatRupiah(oldPrice);
+      if (modalDiscountTag) modalDiscountTag.textContent = `HEMAT ${discountPct}%`;
+
+      // 4. Rating & Reviews
+      const reviewCount = 70 + ((product.id * 7) % 65);
+      if (modalRatingScore) modalRatingScore.textContent = "5.0";
+      if (modalRatingCount) modalRatingCount.textContent = `(${reviewCount} Ulasan Terverifikasi)`;
+
+      // 5. Gallery & Thumbnails
+      modalImage.src = product.image;
+      modalImage.alt = product.name;
+
+      const thumbs = getProductGalleryThumbs(product);
+      if (modalGalleryThumbs) {
+        modalGalleryThumbs.innerHTML = thumbs.map((src, idx) => `
+          <div class="gallery-thumb-item ${idx === 0 ? 'active' : ''}" onclick="switchModalGallery('${src}', this)">
+            <img src="${src}" alt="Thumbnail ${idx + 1}" loading="lazy">
+          </div>
+        `).join("");
+      }
+
+      // 6. Key Features List
+      const features = getProductFeatures(product);
+      if (modalFeaturesList) {
+        modalFeaturesList.innerHTML = features.map(item => `
+          <li>
+            <i class="fa-solid fa-circle-check"></i>
+            <span>${item}</span>
+          </li>
+        `).join("");
+      }
+
+      // 7. Render Pilihan Warna
+      const colorRow = document.getElementById("modalColorRow");
+      const colorsList = document.getElementById("modalColorsList");
+      const selectedColorSpan = document.getElementById("modalSelectedColor");
+      
+      if (product.colors && product.colors.length > 0) {
+        colorRow.style.display = "flex";
+        selectedColor = product.colors[0];
+        selectedColorSpan.textContent = selectedColor;
+        
+        colorsList.innerHTML = product.colors.map((c, i) => {
+          let dotColor = "#ccc";
+          const clow = c.toLowerCase();
+          if (clow.includes("dusty")) dotColor = "#C27BA0";
+          else if (clow.includes("pink") || clow.includes("pingm")) dotColor = "#FF69B4";
+          else if (clow.includes("salem") || clow.includes("peach")) dotColor = "#FA8072";
+          else if (clow.includes("navy")) dotColor = "#0A2540";
+          else if (clow.includes("hitam")) dotColor = "#111111";
+          else if (clow.includes("abu")) dotColor = "#888888";
+          else if (clow.includes("putih")) dotColor = "#FFFFFF";
+          else if (clow.includes("merah")) dotColor = "#E02424";
+          else if (clow.includes("biru")) dotColor = "#1A56DB";
+          else if (clow.includes("kuning")) dotColor = "#FBBF24";
+          else if (clow.includes("ungu") || clow.includes("lilac") || clow.includes("purple")) dotColor = "#B39DDB";
+          else if (clow.includes("magenta") || clow.includes("fuchsia")) dotColor = "#D81B60";
+          else if (clow.includes("hijau") || clow.includes("green")) dotColor = "#81C784";
+
+          return `<button type="button" class="variant-chip ${i === 0 ? 'active' : ''}" onclick="selectModalColor('${c}', this)">
+            <span class="color-dot" style="background: ${dotColor};"></span>
+            ${c}
+          </button>`;
+        }).join("");
+      } else {
+        colorRow.style.display = "none";
+        selectedColor = "";
+      }
+
+      // 8. Render Pilihan Ukuran
+      const sizeRow = document.getElementById("modalSizeRow");
+      const sizesList = document.getElementById("modalSizesList");
+      const selectedSizeSpan = document.getElementById("modalSelectedSize");
+      const availableSizes = product.sizes || ["S", "M", "L", "XL", "2XL"];
+      
+      sizeRow.style.display = "flex";
+      selectedSize = availableSizes[0];
+      selectedSizeSpan.textContent = selectedSize;
+
+      sizesList.innerHTML = availableSizes.map((s, i) => `
+        <button type="button" class="variant-chip ${i === 0 ? 'active' : ''}" onclick="selectModalSize('${s}', this)">
+          ${s}
+        </button>
+      `).join("");
+
+      // 9. Full Description
+      if (modalFullDesc) {
+        modalFullDesc.innerHTML = getProductFullDesc(product);
+      }
+
+      // 10. Specifications Table
+      if (modalSpecsTableBody) {
+        const specs = getProductSpecs(product);
+        modalSpecsTableBody.innerHTML = Object.entries(specs).map(([key, val]) => `
+          <tr>
+            <th>${key}</th>
+            <td>${val}</td>
+          </tr>
+        `).join("");
+      }
+
+      // 11. Package Contents List
+      if (modalPackageList) {
+        const pkg = getProductPackage(product);
+        modalPackageList.innerHTML = pkg.map(item => `
+          <div class="box-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>${item}</span>
+          </div>
+        `).join("");
+      }
+
+      // 12. Related Products
+      if (modalRelatedGrid) {
+        const related = products
+          .filter(p => p.id !== product.id && (p.category === product.category || p.sportCategory === product.sportCategory))
+          .slice(0, 3);
+        
+        // If less than 3, fill with other products
+        const filler = products.filter(p => p.id !== product.id && !related.includes(p));
+        while (related.length < 3 && filler.length > 0) {
+          related.push(filler.shift());
+        }
+
+        modalRelatedGrid.innerHTML = related.map(rel => `
+          <article class="product-card" data-id="${rel.id}">
+            <div class="product-image-box" onclick="openProductModal(${rel.id})" role="button" tabindex="0" title="Klik untuk melihat detail ${rel.name}">
+              <span class="product-badge-tag ${getBadgeClass(rel.badge)}">${rel.badge}</span>
+              <img src="${rel.image}" alt="${rel.name}" class="product-thumb" loading="lazy">
+            </div>
+            <div class="product-details">
+              <div class="product-category">${rel.category} &bull; ${rel.sportCategory || 'Sport'}</div>
+              <h3 class="product-title" onclick="openProductModal(${rel.id})" title="Klik untuk melihat detail ${rel.name}">${rel.name}</h3>
+              <div class="product-price">${formatRupiah(rel.price)}</div>
+              <div class="product-actions">
+                <button class="btn btn-detail" onclick="openProductModal(${rel.id})">
+                  <i class="fa-regular fa-eye"></i> Lihat Detail
+                </button>
+                <a href="${buildWhatsAppUrl(rel)}" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn-card-wa" 
+                   title="Pesan via WhatsApp">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        `).join("");
+      }
+
+      // 13. Mobile Sticky Bottom Action Bar
+      if (mobileBarPrice) mobileBarPrice.textContent = formatRupiah(product.price);
+
+      // 14. Update WhatsApp links with current variant selections
+      updateModalWhatsAppUrl();
+
+      // 15. URL Routing with ?id=
+      if (pushState) {
+        const newUrl = `${window.location.pathname}?id=${product.id}`;
+        history.pushState({ modalOpen: true, productId: product.id }, '', newUrl);
+      }
+
+      // 16. Show modal & lock background scroll
+      productModal.classList.add("open");
+      document.body.style.overflow = "hidden";
+      productModal.scrollTop = 0;
+    }
+
+    function switchModalGallery(src, el) {
+      modalImage.src = src;
+      document.querySelectorAll("#modalGalleryThumbs .gallery-thumb-item").forEach(t => t.classList.remove("active"));
+      if (el) el.classList.add("active");
+
+      // Auto-sync variant color chip if image filename matches a color
+      if (currentModalProduct && currentModalProduct.colors) {
+        const srcLow = src.toLowerCase();
+        const matchedColor = currentModalProduct.colors.find(c => srcLow.includes(c.toLowerCase()));
+        if (matchedColor) {
+          selectedColor = matchedColor;
+          document.getElementById("modalSelectedColor").textContent = matchedColor;
+          document.querySelectorAll("#modalColorsList .variant-chip").forEach(chip => {
+            if (chip.textContent.trim().toLowerCase().includes(matchedColor.toLowerCase())) {
+              chip.classList.add("active");
+            } else {
+              chip.classList.remove("active");
+            }
+          });
+          updateModalWhatsAppUrl();
+        }
+      }
+    }
+
+    function selectModalColor(color, btn) {
+      selectedColor = color;
+      document.getElementById("modalSelectedColor").textContent = color;
+      document.querySelectorAll("#modalColorsList .variant-chip").forEach(c => c.classList.remove("active"));
+      btn.classList.add("active");
+
+      // Auto-switch main image & active thumbnail if image exists for this color variant
+      if (currentModalProduct && currentModalProduct.galleryThumbs) {
+        const colorLow = color.toLowerCase();
+        let matchedThumb = currentModalProduct.galleryThumbs.find(src => src.toLowerCase().includes(colorLow));
+        if (!matchedThumb && currentModalProduct.galleryThumbs.length > 1) {
+          if (currentModalProduct.galleryThumbs.some(t => t.toLowerCase().includes("varian"))) {
+            matchedThumb = currentModalProduct.galleryThumbs.find(t => t.toLowerCase().includes("varian"));
+          }
+        }
+        if (matchedThumb) {
+          modalImage.src = matchedThumb;
+          document.querySelectorAll("#modalGalleryThumbs .gallery-thumb-item").forEach(t => {
+            const img = t.querySelector("img");
+            if (img && img.getAttribute("src") === matchedThumb) {
+              t.classList.add("active");
+            } else {
+              t.classList.remove("active");
+            }
+          });
+        }
+      }
+
+      updateModalWhatsAppUrl();
+    }
+
+    function selectModalSize(size, btn) {
+      selectedSize = size;
+      document.getElementById("modalSelectedSize").textContent = size;
+      document.querySelectorAll("#modalSizesList .variant-chip").forEach(s => s.classList.remove("active"));
+      btn.classList.add("active");
+      updateModalWhatsAppUrl();
+    }
+
+    function closeProductModal(pushState = true) {
+      productModal.classList.remove("open");
+      document.body.style.overflow = "";
+
+      if (pushState && window.location.search.includes('id=')) {
+        history.pushState(null, '', window.location.pathname);
+      }
+    }
+
+    // Modal Event Listeners
+    modalCloseBtn.addEventListener("click", () => closeProductModal());
+    productModal.addEventListener("click", (e) => {
+      if (e.target === productModal) {
+        closeProductModal();
+      }
+    });
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && productModal.classList.contains("open")) {
+        closeProductModal();
+      }
+    });
+
+    // Browser navigation back/forward support
+    window.addEventListener("popstate", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const idParam = urlParams.get('id');
+      if (idParam) {
+        const p = products.find(item => item.id == idParam);
+        if (p) {
+          openProductModal(p.id, false);
+          return;
+        }
+      }
+      closeProductModal(false);
+    });
+
+    /* ==========================================================================
+       6. SEARCH & FILTER LISTENERS
+       ========================================================================== */
+    searchInput.addEventListener("input", (e) => {
+      searchQuery = e.target.value;
+      searchClearBtn.style.display = searchQuery.length > 0 ? "block" : "none";
+      renderProducts();
+    });
+
+    searchClearBtn.addEventListener("click", () => {
+      searchInput.value = "";
+      searchQuery = "";
+      searchClearBtn.style.display = "none";
+      searchInput.focus();
+      renderProducts();
+    });
+
+    categoryPills.forEach(pill => {
+      pill.addEventListener("click", () => {
+        categoryPills.forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+        currentCategory = pill.dataset.category;
+        renderProducts();
+      });
+    });
+
+    /* ==========================================================================
+       7. MOBILE NAVBAR & SMOOTH SCROLLING
+       ========================================================================== */
+    mobileToggle.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+      mobileToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      const icon = mobileToggle.querySelector("i");
+      if (icon) {
+        icon.className = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+      }
+    });
+
+    // Close mobile menu on menu item click
+    document.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        mobileToggle.setAttribute("aria-expanded", "false");
+        const icon = mobileToggle.querySelector("i");
+        if (icon) icon.className = "fa-solid fa-bars";
+      });
+    });
+
+    /* ==========================================================================
+       8. SCROLL EFFECTS: NAVBAR SHADOW, ACTIVE LINK & BACK TO TOP
+       ========================================================================== */
+    const sections = document.querySelectorAll("section[id]");
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.pageYOffset;
+
+      // Header sticky styling
+      if (scrollY > 40) {
+        siteHeader.classList.add("scrolled");
+      } else {
+        siteHeader.classList.remove("scrolled");
+      }
+
+      // Back to top button visibility
+      if (scrollY > 400) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
+      }
+
+      // Active nav link highlight on scroll
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 120;
+        const sectionId = current.getAttribute("id");
+        const navItem = document.querySelector(`.nav-menu a[href*='${sectionId}']`);
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          if (navItem) navItem.classList.add("active");
+        } else {
+          if (navItem) navItem.classList.remove("active");
+        }
+      });
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    /* ==========================================================================
+       9. INITIALIZATION
+       ========================================================================== */
+    document.addEventListener("DOMContentLoaded", () => {
+      renderProducts();
+
+      // Auto-open modal if URL has ?id=
+      const urlParams = new URLSearchParams(window.location.search);
+      const idParam = urlParams.get('id');
+      if (idParam) {
+        const p = products.find(item => item.id == idParam);
+        if (p) {
+          openProductModal(p.id, false);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
