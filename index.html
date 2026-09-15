@@ -988,7 +988,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
     }
 
     .hexo-card:hover .card-media-img {
@@ -1117,20 +1117,85 @@
       color: var(--hexo-orange);
     }
 
-    .card-swatches {
+    /* Interactive Card Variant Selector */
+    .card-variant-selector {
+      margin-bottom: 0.85rem;
+      min-height: 46px;
       display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 0.75rem;
-      min-height: 16px;
+      flex-direction: column;
+      gap: 0.35rem;
     }
 
-    .color-swatch-dot {
-      width: 12px;
-      height: 12px;
+    .card-variant-selector-empty {
+      min-height: 46px;
+      margin-bottom: 0.85rem;
+    }
+
+    .card-variant-header {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .card-variant-label {
+      font-weight: 500;
+      color: var(--hexo-text-muted);
+    }
+
+    .card-active-color-name {
+      font-weight: 700;
+      color: var(--hexo-dark);
+      background: var(--hexo-bg-subtle);
+      border: 1px solid var(--hexo-border-light);
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+    }
+
+    .card-swatches-list {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .card-swatch-btn {
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      display: inline-block;
+      border: 1px solid rgba(0, 0, 0, 0.18);
+      padding: 2px;
+      background: #FFFFFF;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s;
+      position: relative;
+    }
+
+    .card-swatch-fill {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: block;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-swatch-btn:hover {
+      transform: scale(1.18);
+      border-color: var(--hexo-orange);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-swatch-btn.active {
+      transform: scale(1.18);
+      border-color: var(--hexo-dark);
+      box-shadow: 0 0 0 1.5px #FFFFFF, 0 0 0 3.5px var(--hexo-orange);
     }
 
     .card-price-row {
@@ -3927,7 +3992,7 @@
     }
 
     /* Build WhatsApp Link with Dynamic Message & Price */
-    function buildWhatsAppUrl(product, price) {
+    function buildWhatsAppUrl(product, price, variantColor) {
       const phoneNumber = "6285219371052";
       let name = "";
       let priceText = "";
@@ -3941,8 +4006,66 @@
       }
 
       const priceSnippet = priceText ? ` seharga ${priceText}` : "";
-      const message = `Halo LapakSports, saya tertarik memesan produk ${name}${priceSnippet}. Mohon info ketersediaan stoknya. Terima kasih!`;
+      const variantSnippet = variantColor ? ` (Varian Warna: ${variantColor})` : "";
+      const message = `Halo LapakSports, saya tertarik memesan produk ${name}${variantSnippet}${priceSnippet}. Mohon info ketersediaan stoknya. Terima kasih!`;
       return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    }
+
+    function getVariantImageForProduct(product, colorName) {
+      if (!product) return "";
+      const thumbs = (product.galleryThumbs && product.galleryThumbs.length > 0) ? product.galleryThumbs : [product.image];
+      const colorLow = (colorName || "").toLowerCase().trim();
+      const colorWords = colorLow.split(/\s+/);
+
+      let matched = thumbs.find(src => {
+        const s = src.toLowerCase();
+        return s.includes(colorLow) || s.includes(colorLow.replace(/\s+/g, '-')) || colorWords.every(w => s.includes(w));
+      });
+      return matched || product.image;
+    }
+
+    function selectCardVariant(productId, colorName, btn, event) {
+      if (event) {
+        event.stopPropagation();
+        event.preventDefault();
+      }
+
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+
+      const card = btn.closest(".hexo-card");
+      if (!card) return;
+
+      // 1. Highlight active swatch
+      card.querySelectorAll(".card-swatch-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // 2. Update active color label
+      const nameLabel = card.querySelector(".card-active-color-name");
+      if (nameLabel) {
+        nameLabel.textContent = colorName;
+      }
+
+      // 3. Switch card product image with smooth transition
+      const targetImg = getVariantImageForProduct(product, colorName);
+      const img = card.querySelector(".card-media-img");
+      if (img && targetImg && img.getAttribute("src") !== targetImg) {
+        img.style.opacity = "0.3";
+        img.src = targetImg;
+        setTimeout(() => {
+          img.style.opacity = "1";
+        }, 80);
+      }
+
+      // 4. Update WhatsApp link for this variant
+      const waBtn = card.querySelector(".btn-card-wa-icon");
+      if (waBtn) {
+        waBtn.href = buildWhatsAppUrl(product, null, colorName);
+        waBtn.setAttribute("title", `Pesan via WhatsApp (${colorName})`);
+      }
+
+      // 5. Store selected variant on card dataset
+      card.dataset.selectedColor = colorName;
     }
 
     function handleShopeeClick(e, anchor) {
@@ -4016,23 +4139,35 @@
         const oldPrice = item.oldPrice || (Math.round((item.price * 1.35) / 5000) * 5000);
         const discountPct = Math.round((1 - (item.price / oldPrice)) * 100);
         
-        // Color swatches preview
+        // Interactive color swatches
         let swatchesHtml = "";
+        const defaultColor = (item.colors && item.colors.length > 0) ? item.colors[0] : "";
         if (item.colors && item.colors.length > 0) {
           swatchesHtml = `
-            <div class="card-swatches" title="Varian warna: ${item.colors.join(', ')}">
-              ${item.colors.slice(0, 5).map(c => `
-                <span class="color-swatch-dot" style="background: ${getColorHex(c)};"></span>
-              `).join("")}
-              ${item.colors.length > 5 ? `<span style="font-size: 0.7rem; color: var(--hexo-text-muted);">+${item.colors.length - 5}</span>` : ''}
+            <div class="card-variant-selector" onclick="event.stopPropagation()">
+              <div class="card-variant-header">
+                <span class="card-variant-label">Warna:</span>
+                <span class="card-active-color-name">${defaultColor}</span>
+              </div>
+              <div class="card-swatches-list">
+                ${item.colors.map((c, idx) => `
+                  <button type="button" 
+                          class="card-swatch-btn ${idx === 0 ? 'active' : ''}" 
+                          title="Pilih warna ${c}" 
+                          aria-label="Pilih warna ${c}"
+                          onclick="selectCardVariant(${item.id}, '${c}', this, event)">
+                    <span class="card-swatch-fill" style="background-color: ${getColorHex(c)};"></span>
+                  </button>
+                `).join("")}
+              </div>
             </div>
           `;
         } else {
-          swatchesHtml = `<div class="card-swatches"></div>`;
+          swatchesHtml = `<div class="card-variant-selector-empty"></div>`;
         }
 
         return `
-          <article class="hexo-card" data-id="${item.id}">
+          <article class="hexo-card" data-id="${item.id}" data-selected-color="${defaultColor}">
             <div class="card-media-box" onclick="openProductModal(${item.id})">
               <span class="card-badge-tag ${getBadgeClass(item.badge)}">${item.badge || 'PROMO'}</span>
               <img src="${item.image}" alt="${item.name}" class="card-media-img" loading="lazy">
@@ -4060,11 +4195,11 @@
                 <button type="button" class="btn-card-detail" onclick="openProductModal(${item.id})">
                   Detail &amp; Beli
                 </button>
-                <a href="${buildWhatsAppUrl(item)}" 
+                <a href="${buildWhatsAppUrl(item, null, defaultColor)}" 
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="btn-card-wa-icon" 
-                   title="Pesan via WhatsApp">
+                   title="Pesan via WhatsApp${defaultColor ? ' (' + defaultColor + ')' : ''}">
                   <i class="fa-brands fa-whatsapp"></i>
                 </a>
               </div>
@@ -4345,17 +4480,38 @@
       const colorsList = document.getElementById("modalColorsList");
       const selectedColorSpan = document.getElementById("modalSelectedColor");
       
+      const cardEl = document.querySelector(`.hexo-card[data-id="${productId}"]`);
+      const defaultVariant = (cardEl && cardEl.dataset.selectedColor) ? cardEl.dataset.selectedColor : (product.colors && product.colors.length > 0 ? product.colors[0] : "");
+
       if (product.colors && product.colors.length > 0) {
         colorRow.style.display = "block";
-        selectedColor = product.colors[0];
+        selectedColor = (defaultVariant && product.colors.includes(defaultVariant)) ? defaultVariant : product.colors[0];
         selectedColorSpan.textContent = selectedColor;
         
-        colorsList.innerHTML = product.colors.map((c, i) => `
-          <button type="button" class="variant-chip ${i === 0 ? 'active' : ''}" onclick="selectModalColor('${c}', this)">
+        colorsList.innerHTML = product.colors.map((c) => `
+          <button type="button" class="variant-chip ${c === selectedColor ? 'active' : ''}" onclick="selectModalColor('${c}', this)">
             <span class="color-dot" style="background: ${getColorHex(c)};"></span>
             ${c}
           </button>
         `).join("");
+
+        // Sync modal image & active thumb if a specific variant was pre-selected
+        if (selectedColor) {
+          const matchedSrc = getVariantImageForProduct(product, selectedColor);
+          if (matchedSrc) {
+            modalImage.src = matchedSrc;
+            if (modalGalleryThumbs) {
+              document.querySelectorAll("#modalGalleryThumbs .gallery-thumb-item").forEach(t => {
+                const img = t.querySelector("img");
+                if (img && img.getAttribute("src") === matchedSrc) {
+                  t.classList.add("active");
+                } else {
+                  t.classList.remove("active");
+                }
+              });
+            }
+          }
+        }
       } else {
         colorRow.style.display = "none";
         selectedColor = "";
