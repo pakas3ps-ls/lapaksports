@@ -1989,6 +1989,24 @@
 
     .detail-body-container {
       padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .detail-breadcrumbs {
+      order: 1;
+    }
+
+    .product-detail-layout {
+      order: 2;
+    }
+
+    .product-detail-sections {
+      order: 3;
+    }
+
+    .detail-related-section {
+      order: 4;
     }
 
     .detail-breadcrumbs {
@@ -2318,6 +2336,343 @@
       display: inline-block;
     }
 
+    /* Modal Shipping Calculator Section */
+    .modal-shipping-section {
+      margin-bottom: 1.15rem;
+      border-top: 1px dashed var(--hexo-border);
+      padding-top: 1.15rem;
+    }
+
+    .shipping-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.65rem;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .shipping-header-title {
+      font-size: 0.8125rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--hexo-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .shipping-header-title i {
+      color: var(--hexo-orange);
+      font-size: 0.95rem;
+    }
+
+    .shipping-origin-tag {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--hexo-text-muted);
+      background: #F3F4F6;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Destination Selector */
+    .shipping-destination-box {
+      background: #F8F9FA;
+      border: 1px solid var(--hexo-border);
+      border-radius: 6px;
+      padding: 0.75rem 0.85rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .shipping-destination-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+    }
+
+    .shipping-dest-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .shipping-dest-label {
+      font-size: 0.71875rem;
+      font-weight: 700;
+      color: #4B5563;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .shipping-select-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .shipping-select-wrap i {
+      position: absolute;
+      left: 0.65rem;
+      font-size: 0.8rem;
+      color: var(--hexo-text-muted);
+      pointer-events: none;
+    }
+
+    .shipping-select {
+      width: 100%;
+      padding: 0.45rem 1.75rem 0.45rem 1.95rem;
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--hexo-dark);
+      background-color: #FFFFFF;
+      border: 1.5px solid var(--hexo-border);
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%236B7280' d='M5 6L0 0h10z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 0.65rem center;
+    }
+
+    .shipping-select:focus {
+      border-color: var(--hexo-dark);
+      box-shadow: 0 0 0 2px rgba(18, 18, 18, 0.1);
+    }
+
+    .shipping-route-badge {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.71875rem;
+      color: #374151;
+      margin-top: 0.55rem;
+      padding-top: 0.45rem;
+      border-top: 1px dashed #E5E7EB;
+    }
+
+    .shipping-zone-tag {
+      font-size: 0.625rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      background: #E0E7FF;
+      color: #3730A3;
+      padding: 0.12rem 0.45rem;
+      border-radius: 999px;
+      margin-left: auto;
+    }
+
+    .shipping-options-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.65rem;
+    }
+
+    .shipping-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--hexo-border);
+      border-radius: 6px;
+      padding: 0.65rem 0.75rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.35rem;
+      transition: all var(--transition-fast);
+      position: relative;
+    }
+
+    .shipping-card:hover {
+      border-color: #9CA3AF;
+      transform: translateY(-1px);
+    }
+
+    .shipping-card.active {
+      border-color: var(--hexo-dark);
+      background: #FDFDFD;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Disabled Shipping Card (e.g. Instant outside Jabodetabek) */
+    .shipping-card.disabled {
+      opacity: 0.5;
+      background: #F9FAFB;
+      border-color: #E5E7EB;
+      cursor: not-allowed;
+    }
+
+    .shipping-card.disabled:hover {
+      transform: none;
+      border-color: #E5E7EB;
+    }
+
+    .shipping-badge-disabled {
+      background: #F3F4F6;
+      color: #9CA3AF;
+    }
+
+    .shipping-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.35rem;
+    }
+
+    .shipping-card-name {
+      font-size: 0.8125rem;
+      font-weight: 800;
+      color: var(--hexo-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .shipping-card-name i {
+      font-size: 0.8rem;
+      color: #4B5563;
+    }
+
+    .shipping-card.active .shipping-card-name i {
+      color: var(--hexo-orange);
+    }
+
+    .shipping-badge {
+      font-size: 0.625rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 0.1rem 0.35rem;
+      border-radius: 2px;
+      letter-spacing: 0.03em;
+    }
+
+    .shipping-badge-eko {
+      background: #E0F2FE;
+      color: #0369A1;
+    }
+
+    .shipping-badge-instant {
+      background: #FEF3C7;
+      color: #B45309;
+    }
+
+    .shipping-card-service {
+      font-size: 0.7rem;
+      color: var(--hexo-text-muted);
+      line-height: 1.25;
+    }
+
+    .shipping-card-cost {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--hexo-dark);
+      margin-top: 0.2rem;
+    }
+
+    .shipping-card.active .shipping-card-cost {
+      color: #059669;
+    }
+
+    .shipping-check-icon {
+      display: none;
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 16px;
+      height: 16px;
+      background: var(--hexo-dark);
+      color: #FFFFFF;
+      border-radius: 50%;
+      font-size: 0.55rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .shipping-card.active .shipping-check-icon {
+      display: flex;
+    }
+
+    /* Order Summary Box */
+    .order-summary-box {
+      background: #F8F9FA;
+      border: 1px solid var(--hexo-border);
+      border-radius: 6px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .order-summary-header {
+      font-size: 0.78125rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--hexo-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.65rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .order-summary-header i {
+      color: #10B981;
+      font-size: 0.9rem;
+    }
+
+    .order-summary-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .summary-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8125rem;
+    }
+
+    .summary-row-label {
+      color: #4B5563;
+      font-weight: 500;
+    }
+
+    .summary-row-val {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--hexo-dark);
+      font-size: 0.9375rem;
+    }
+
+    .summary-divider {
+      height: 1px;
+      border-top: 1px dashed #D1D5DB;
+      margin: 0.35rem 0;
+    }
+
+    .summary-total-row .summary-total-label {
+      font-weight: 800;
+      color: var(--hexo-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .summary-total-row .summary-total-val {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.25rem;
+      color: #059669;
+    }
+
     .product-wa-cta-btn {
       width: 100%;
       background: var(--hexo-wa);
@@ -2458,12 +2813,245 @@
       padding-top: 0.75rem;
     }
 
+    /* Related Products Preview Section (Subtle, Clean & Non-intrusive) */
+    .detail-related-section {
+      margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      background: #FAFAFA;
+      border: 1px solid var(--hexo-border);
+      border-radius: 8px;
+    }
+
+    .related-section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    }
+
+    .related-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .related-section-subtitle {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--hexo-text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .related-section-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--hexo-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0;
+    }
+
+    .related-section-title i {
+      font-size: 0.95rem;
+      color: #6B7280;
+    }
+
+    .related-header-hint {
+      font-size: 0.75rem;
+      color: #6B7280;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .related-preview-track {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-preview-card {
+      background: #FFFFFF;
+      border: 1px solid var(--hexo-border);
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      text-decoration: none;
+    }
+
+    .related-preview-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      border-color: #CBD5E1;
+    }
+
+    .related-preview-card:active {
+      transform: scale(0.98);
+    }
+
+    .related-preview-img-box {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #F8F9FA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-bottom: 1px solid #F1F5F9;
+      position: relative;
+    }
+
+    .related-preview-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+      transition: transform 0.2s ease;
+    }
+
+    .related-preview-card:hover .related-preview-img-box img {
+      transform: scale(1.05);
+    }
+
+    .related-preview-info {
+      padding: 0.65rem 0.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      gap: 0.35rem;
+    }
+
+    .related-preview-cat {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #9CA3AF;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .related-preview-name {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #1F2937;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 2.1em;
+      margin: 0;
+    }
+
+    .related-preview-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.25rem;
+      padding-top: 0.25rem;
+      border-top: 1px dashed #F1F5F9;
+    }
+
+    .related-preview-price {
+      font-family: var(--font-display);
+      font-size: 0.9375rem;
+      font-weight: 800;
+      color: var(--hexo-dark);
+    }
+
+    .related-preview-link {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #6B7280;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .related-preview-card:hover .related-preview-link {
+      color: var(--hexo-dark);
+    }
+
     @media (max-width: 850px) {
       .product-detail-layout {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         min-width: 0;
         width: 100%;
+        margin-bottom: 1.25rem;
+      }
+      .product-detail-lead {
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+      .detail-related-section {
+        order: 3;
+        margin-top: 0.25rem;
+        margin-bottom: 1.75rem;
+        padding: 0.875rem 0.75rem;
+        background: #FAFAFA;
+        border: 1px solid #ECECEC;
+        border-radius: 8px;
+      }
+      .product-detail-sections {
+        order: 4;
+      }
+      .related-section-header {
+        margin-bottom: 0.65rem;
+        padding-bottom: 0.4rem;
+      }
+      .related-section-title {
+        font-size: 1.05rem;
+      }
+      .related-preview-track {
+        display: flex;
+        overflow-x: auto;
+        gap: 0.65rem;
+        padding: 0.2rem 0.15rem 0.5rem 0.15rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .related-preview-track::-webkit-scrollbar {
+        display: none;
+      }
+      .related-preview-card {
+        flex: 0 0 135px;
+        max-width: 140px;
+        scroll-snap-align: start;
+        border-radius: 6px;
+      }
+      .related-preview-img-box {
+        padding: 2px;
+      }
+      .related-preview-info {
+        padding: 0.45rem 0.5rem;
+        gap: 0.2rem;
+      }
+      .related-preview-name {
+        font-size: 0.75rem;
+        min-height: 2.6em;
+      }
+      .related-preview-price {
+        font-size: 0.85rem;
+      }
+      .related-preview-link {
+        font-size: 0.65rem;
       }
       .product-gallery {
         position: static;
@@ -2503,6 +3091,19 @@
       .gallery-thumb-item {
         width: 58px;
         height: 58px;
+      }
+      .related-preview-card {
+        flex: 0 0 128px;
+        max-width: 132px;
+      }
+      .related-section-title {
+        font-size: 0.95rem;
+      }
+      .shipping-options-list {
+        grid-template-columns: 1fr;
+      }
+      .shipping-destination-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -2640,8 +3241,8 @@
       </div>
       <div class="topbar-contact">
         <span><i class="fa-solid fa-clock"></i> Buka 09.00 - 21.00 WIB</span>
-        <a href="https://wa.me/6285219371052" target="_blank" rel="noopener noreferrer">
-          <i class="fa-brands fa-whatsapp"></i> CS WhatsApp: 085219371052
+        <a href="https://wa.me/628176719453" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp"></i> CS WhatsApp: 08176719453
         </a>
       </div>
     </div>
@@ -2673,7 +3274,7 @@
         <button class="btn-search-trigger" onclick="focusCatalogSearch()" title="Cari Apparel">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <a href="https://wa.me/6285219371052?text=Halo%20LapakSports,%20saya%20ingin%20konsultasi%20apparel%20olahraga." 
+        <a href="https://wa.me/628176719453?text=Halo%20LapakSports,%20saya%20ingin%20konsultasi%20apparel%20olahraga." 
            target="_blank" 
            rel="noopener noreferrer" 
            class="btn-hexo-wa" 
@@ -2715,7 +3316,7 @@
             <a href="#produk" class="btn-hexo-solid">
               BELANJA SEKARANG <i class="fa-solid fa-arrow-right"></i>
             </a>
-            <a href="https://wa.me/6285219371052?text=Halo%20LapakSports,%20saya%20ingin%20konsultasi%20ukuran%20dan%20rekomendasi%20apparel%20olahraga." 
+            <a href="https://wa.me/628176719453?text=Halo%20LapakSports,%20saya%20ingin%20konsultasi%20ukuran%20dan%20rekomendasi%20apparel%20olahraga." 
                target="_blank" 
                rel="noopener noreferrer" 
                class="btn-hexo-outline">
@@ -3157,7 +3758,7 @@
               <div class="loc-icon"><i class="fa-solid fa-phone"></i></div>
               <div class="loc-text">
                 <b>Hotline CS / WhatsApp:</b>
-                <span>085219371052</span>
+                <span>08176719453</span>
               </div>
             </div>
 
@@ -3203,7 +3804,7 @@
             <a href="https://www.tokopedia.com/lapaksportsbekasi" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Tokopedia LapakSports">
               <i class="fa-solid fa-bag-shopping"></i>
             </a>
-            <a href="https://wa.me/6285219371052" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="WhatsApp LapakSports">
+            <a href="https://wa.me/628176719453" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="WhatsApp LapakSports">
               <i class="fa-brands fa-whatsapp"></i>
             </a>
           </div>
@@ -3245,7 +3846,7 @@
             </div>
             <div class="footer-contact-row">
               <i class="fa-brands fa-whatsapp"></i>
-              <span>WhatsApp: 085219371052</span>
+              <span>WhatsApp: 08176719453</span>
             </div>
             <div class="footer-contact-row">
               <i class="fa-solid fa-clock"></i>
@@ -3367,6 +3968,74 @@
               </div>
             </div>
 
+            <!-- Shipping Courier Calculator -->
+            <div class="modal-shipping-section" id="modalShippingSection">
+              <div class="shipping-section-header">
+                <div class="shipping-header-title">
+                  <i class="fa-solid fa-truck-fast"></i>
+                  <span>PILIH TUJUAN &amp; EKSPEDISI PENGIRIMAN:</span>
+                </div>
+                <span class="shipping-origin-tag">Dikirim dari LapakSports Bekasi Utara</span>
+              </div>
+
+              <!-- Destination Selector (Provinsi & Kota) -->
+              <div class="shipping-destination-box">
+                <div class="shipping-destination-grid">
+                  <div class="shipping-dest-col">
+                    <label for="shippingProvSelect" class="shipping-dest-label">Provinsi Tujuan:</label>
+                    <div class="shipping-select-wrap">
+                      <i class="fa-solid fa-map-location-dot"></i>
+                      <select id="shippingProvSelect" class="shipping-select" onchange="onShippingProvChange()"></select>
+                    </div>
+                  </div>
+                  <div class="shipping-dest-col">
+                    <label for="shippingCitySelect" class="shipping-dest-label">Kota / Kabupaten:</label>
+                    <div class="shipping-select-wrap">
+                      <i class="fa-solid fa-city"></i>
+                      <select id="shippingCitySelect" class="shipping-select" onchange="onShippingCityChange()"></select>
+                    </div>
+                  </div>
+                </div>
+                <div class="shipping-route-badge" id="shippingRouteBadge">
+                  <span><i class="fa-solid fa-location-dot" style="color: var(--hexo-orange);"></i> Dari: <strong>Bekasi Utara</strong></span>
+                  <i class="fa-solid fa-arrow-right" style="font-size: 0.7rem; color: #9CA3AF;"></i>
+                  <span>Tujuan: <strong id="shippingRouteDestText">Bekasi Kota</strong></span>
+                  <span class="shipping-zone-tag" id="shippingZoneTag">Zona 1 (Jabodetabek)</span>
+                </div>
+              </div>
+
+              <div class="shipping-options-list" id="modalShippingList">
+                <!-- Dynamically populated shipping courier cards -->
+              </div>
+            </div>
+
+            <!-- Order Summary Box -->
+            <div class="order-summary-box" id="modalOrderSummaryBox">
+              <div class="order-summary-header">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>RINGKASAN PESANAN</span>
+              </div>
+              <div class="order-summary-rows">
+                <div class="summary-row">
+                  <span class="summary-row-label">Harga Barang</span>
+                  <span class="summary-row-val" id="summaryItemPrice">Rp 0</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-row-label">Tujuan Pengiriman</span>
+                  <span class="summary-row-val" id="summaryDestVal" style="font-size: 0.8125rem; font-family: var(--font-body); font-weight: 600;">Bekasi Kota, Jawa Barat</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-row-label" id="summaryShippingLabel">Ongkos Kirim (JNE)</span>
+                  <span class="summary-row-val" id="summaryShippingCost">Rp 10.000</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-row summary-total-row">
+                  <span class="summary-total-label">Total Pembayaran</span>
+                  <span class="summary-total-val" id="summaryTotalPrice">Rp 0</span>
+                </div>
+              </div>
+            </div>
+
             <!-- WhatsApp Purchase CTA -->
             <div class="product-cta-container">
               <a href="#" id="modalWaBtn" target="_blank" rel="noopener noreferrer" class="product-wa-cta-btn">
@@ -3380,6 +4049,25 @@
               </div>
             </div>
 
+          </div>
+        </div>
+
+        <!-- Related Products Section (Preview Produk Ringan & Tidak Standout) -->
+        <div class="detail-related-section" id="detailRelatedSection">
+          <div class="related-section-header">
+            <div class="related-header-left">
+              <span class="related-section-subtitle">PILIHAN MODEL LAINNYA</span>
+              <h3 class="related-section-title">
+                <i class="fa-solid fa-shapes"></i> Produk Terkait
+              </h3>
+            </div>
+            <div class="related-header-hint">
+              <span>Geser &bull; Ketuk untuk melihat</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="related-preview-track" id="modalRelatedGrid">
+            <!-- Dynamically populated related product preview cards -->
           </div>
         </div>
 
@@ -3415,17 +4103,6 @@
           </div>
         </div>
 
-        <!-- Related Products Section -->
-        <div class="detail-related-section">
-          <h2 class="detail-section-title" style="margin-bottom: 2rem;">
-            <i class="fa-solid fa-layer-group" style="color: var(--hexo-orange); margin-right: 0.5rem;"></i>
-            Produk Terkait Lainnya
-          </h2>
-          <div class="hexo-product-grid" id="modalRelatedGrid">
-            <!-- Dynamically populated related product cards -->
-          </div>
-        </div>
-
       </div>
 
       <!-- Mobile Sticky Bottom Action Bar -->
@@ -3453,7 +4130,7 @@
     </button>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/6285219371052?text=Halo%20LapakSports,%20saya%20ingin%20bertanya%20tentang%20produk%20apparel%20olahraga." 
+    <a href="https://wa.me/628176719453?text=Halo%20LapakSports,%20saya%20ingin%20bertanya%20tentang%20produk%20apparel%20olahraga." 
        target="_blank" 
        rel="noopener noreferrer" 
        class="btn-floating-wa" 
@@ -3469,6 +4146,58 @@
   <script>
     const products = [
       {
+        id: 127,
+        name: "Jaket Olahraga Lotto Scuba UA988",
+        category: "Jaket",
+        sportCategory: "Running",
+        price: 150000,
+        oldPrice: 225000,
+        tagline: "OFFICIAL TECH FLEECE FULL-ZIP SPORT JACKET UA988",
+        image: "jaket-lotto-scuba-ua988-abu-hitam.png",
+        galleryThumbs: [
+          "jaket-lotto-scuba-ua988-abu-hitam.png",
+          "jaket-lotto-scuba-ua988-abu-hitam-depan.jpg",
+          "jaket-lotto-scuba-ua988-abu-hitam-belakang.png"
+        ],
+        description: "Jaket olahraga pria Tech Fleece berbahan Lotto Scuba rajut ganda yang tebal, lembut, dan sejuk di kulit. Dilengkapi ritsleting depan penuh, saku resleting aman, dan rib elastis—sangat nyaman untuk lari, gym, gowes, maupun gaya kasual.",
+        badge: "New",
+        colors: ["Abu kombinasi Hitam"],
+        sizes: ["XL", "2XL", "3XL"],
+        features: [
+          "Material Premium Lotto Scuba: Serat kain rajut ganda (double-faced) tebal, halus, lembut di kulit, dan tidak mudah kusut",
+          "Two-Tone Raglan Design: Kombinasi sporty warna Abu Misty pada badan dan Hitam pekat pada lengan",
+          "Mock-Neck Collar & Full-Zip: Kerah tegak sporty dengan ritsleting depan penuh melindungi leher dari angin",
+          "Dual Zipper Pockets: Dilengkapi saku samping beritsleting aman untuk smartphone dan barang bawaan",
+          "Ribbed Cuffs & Hem: Karet rib elastis di pergelangan tangan dan pinggang bawah menjaga fitting tetap rapi",
+          "Sangat ideal untuk Running, Jogging, Fitness Gym, Sepeda, Pemanasan Olahraga, dan Gaya Athleisure Kasual"
+        ]
+      },
+      {
+        id: 126,
+        name: "Jaket Olahraga Lotto Scuba 6602",
+        category: "Jaket",
+        sportCategory: "Running",
+        price: 150000,
+        oldPrice: 225000,
+        tagline: "OFFICIAL TECH FLEECE FULL-ZIP SPORT JACKET 6602",
+        image: "jaket-lotto-scuba-6602-hitam-abu.png",
+        galleryThumbs: [
+          "jaket-lotto-scuba-6602-hitam-abu.png"
+        ],
+        description: "Jaket olahraga pria Tech Fleece berbahan Lotto Scuba premium dengan aksen panel abu misty atletis. Dilengkapi kerah mock-neck, resleting depan halus, dan manset rib—ideal untuk lari pagi, gym, pemanasan, dan aktivitas harian.",
+        badge: "New",
+        colors: ["Hitam kombinasi Abu"],
+        sizes: ["XL", "2XL", "3XL"],
+        features: [
+          "Material Premium Lotto Scuba: Serat kain ganda (double-faced) tebal, halus, lembut di kulit, dan tidak mudah kusut",
+          "Engineered Grey Heather Insets: Panel aksen abu-abu misty rajut di bagian bahu untuk tampilan sporty berkelas",
+          "Mock-Neck Collar & Full-Zip: Kerah tegak sporty dengan ritsleting depan penuh untuk proteksi angin maksimal",
+          "Ribbed Cuffs & Hem: Karet rib elastis di pergelangan tangan dan pinggang bawah menjaga fitting tetap rapi",
+          "Dual Side Pockets: Dilengkapi saku samping fungsional untuk menyimpan barang esensial atau menghangatkan tangan",
+          "Sangat ideal untuk Running, Jogging, Fitness Gym, Sepeda, Pemanasan Olahraga, dan Gaya Athleisure Kasual"
+        ]
+      },
+      {
         id: 125,
         name: "Celana Olahraga Cargo Micro WZ53 Alo",
         category: "Celana Panjang",
@@ -3482,7 +4211,7 @@
           "celana-cargo-micro-wz53-hitam.png",
           "celana-cargo-micro-wz53-ungu-detail.png"
         ],
-        description: "Celana panjang olahraga model cargo mikro wanita seri WZ53 Alo hadir dengan desain trendi, sporty, dan stylish. Menggunakan material Micro Fabric Premium dengan Dry-Fit Technology yang super ringan (lightweight), sejuk di kulit (cool touch), dan berdaya lentur 4-way stretch untuk keleluasaan bergerak optimal. Dilengkapi saku kargo ganda di paha samping dengan penutup flap yang modis dan fungsional, karet pinggang elastis bertali serut (drawstring) aktif untuk penyesuaian yang pas, serta aksen stopper serut di ujung pergelangan kaki. Sangat ideal untuk running, jogging, fitness gym, senam, dance, trekking outdoor, maupun gaya santai athleisure harian.",
+        description: "Celana cargo olahraga wanita berbahan Micro Fabric Dry-Fit 4-way stretch yang ultra-ringan dan sejuk. Dilengkapi saku kargo ganda modis, pinggang serut aktif, dan stopper pergelangan kaki untuk jogging, gym, senam, hingga athleisure.",
         badge: "New",
         colors: ["Ungu", "Hitam"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -3509,7 +4238,7 @@
           "baju-running-nylon-yh11-skyblue.png",
           "baju-running-nylon-yh11-grey.png"
         ],
-        description: "Baju olahraga pria lengan pendek seri Nylon YH11 hadir dengan motif watermarked Project Rock / athletic pattern yang maskulin dan berkelas. Terbuat dari material Premium Nylon Dry-Fit Technology yang super lembut, berdaya lentur tinggi (elastic stretch 4-arah), dan sangat nyaman (comfortable) di kulit. Sirkulasi udara mikro pori menjaga tubuh tetap sejuk, kering, dan bebas gerah selama sesi latihan intensif. Model potongan atletik modern berlogo Under Armour di dada. Sangat ideal untuk running, lari pagi, jogging, gym fitness workout, bersepeda (cycling), maupun padu-padan athleisure harian.",
+        description: "Kaos olahraga pria lengan pendek berbahan Nylon Dry-Fit lentur 4-arah dengan motif athletic watermarked. Berpori mikro adem dan cepat kering, sangat nyaman untuk running, gym workout, bersepeda, dan gaya kasual.",
         badge: "New",
         colors: ["Hitam", "Sky Blue", "Grey"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -3535,7 +4264,7 @@
           "baju-running-nylon-oc02-hitam.png",
           "baju-running-nylon-oc02-tosca.jpg"
         ],
-        description: "Baju olahraga pria lengan pendek seri Nylon OC02 dengan motif corak abstrak dinamis modern (camo pattern). Terbuat dari material Premium Nylon Dry-Fit berteknologi tinggi yang ekstra lentur (flexible 4-way stretch), sangat sejuk (cool touch), dan berbobot ringan di tubuh. Memiliki sirkulasi udara mikro pori yang secara efektif menyerap serta menguapkan keringat agar tubuh tetap adem dan tidak gerah saat berolahraga. Model potongan atletik modern berlogo On Running / OC elegan pada dada. Sangat ideal dan nyaman untuk running, lari pagi, jogging, gym workout, bersepeda, maupun aktivitas kasual harian.",
+        description: "Kaos olahraga pria motif abstrak modern berbahan Premium Nylon Dry-Fit 4-way stretch. Berbobot ringan, sejuk di kulit, dan cepat menyerap keringat untuk lari pagi, gym workout, maupun bersepeda.",
         badge: "New",
         colors: ["Hitam", "Tosca"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -3565,7 +4294,7 @@
           "baju-running-nylon-496-hijau.png",
           "baju-running-nylon-496-army.png"
         ],
-        description: "Baju olahraga pria lengan pendek seri Nylon 496 dirancang khusus dengan perpaduan material Premium Nylon Dry-Fit yang fleksibel (4-way stretch), sangat ringan (lightweight), dan sejuk di kulit. Dilengkapi teknologi Dry-Fit Moisture-Wicking Technology yang cepat menyerap dan menguapkan keringat agar tubuh tetap nyaman dan bebas gerah saat berolahraga. Model potongan atletik modern dengan aksen garis reflektif di pundak untuk visibilitas, logo Swoosh elegan di dada, serta bahan halus yang tidak mudah kusut. Sangat ideal untuk running, lari pagi, jogging, fitness gym workout, bersepeda, maupun aktivitas harian kasual.",
+        description: "Kaos running pria lengan pendek berbahan Premium Dry-Fit berpori aktif dengan aksen garis bahu sporty. Sejuk, elastis bebas gerak, dan anti-gerah untuk lari, jogging, fitness gym, dan bersepeda.",
         badge: "New",
         colors: ["Hitam", "Sky Blue", "Cream", "Navy", "Hijau", "Army"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -3591,7 +4320,7 @@
           "celana-running-micro-126-navy.png",
           "celana-running-micro-126-navy-model.png"
         ],
-        description: "Celana pendek olahraga lari dan fitness pria seri Micro 126 dirancang dengan material mikro parasut Dry-Fit berkualitas tinggi yang super ringan (ultralight), cepat kering (quick dry), dan sangat nyaman (comfortable). Dilengkapi teknologi Performance Technology yang menjaga sirkulasi udara optimal dan anti-gerah saat berolahraga. Model potongan atletik modern dengan saku samping beritsleting aman warna kontras, aksen garis reflektif sporty, pinggang karet elastis berkerut, serta tali serut aktif (drawstring) untuk kenyamanan fitting maksimal saat running, jogging, latihan di gym, workout, maupun bersepeda.",
+        description: "Celana pendek olahraga pria berbahan Micro Fabric premium yang ringan dan sejuk. Dilengkapi saku samping resleting aman, karet pinggang bertali serut, dan celah samping untuk jogging, lari, gym, serta santai.",
         badge: "New",
         colors: ["Navy"],
         sizes: ["M", "L", "XL", "XXL"],
@@ -3618,7 +4347,7 @@
           "jaket-running-micro-serut-ja17-ungu.png",
           "jaket-running-micro-serut-ja17-coklat.png"
         ],
-        description: "Jaket running micro parasut wanita seri JA17 dengan desain modis beraksen tali serut aktif (cinch cord) pada kedua pergelangan lengan dan pinggang bawah untuk fitting yang fleksibel dan ramping. Menggunakan material micro fabric berkualitas premium yang sangat ringan (lightweight), lembut (comfortable), fleksibel (flexible), serta berteknologi Dry-Fit yang cepat menguapkan keringat. Desain kerah tegak sporty (high-neck) dengan zipper depan halus memberikan proteksi optimal dari terpaan angin dan panas. Sangat modis dan fungsional untuk running, jogging, fitness gym workout, senam, gowes sepeda, maupun gaya santai athleisure harian.",
+        description: "Jaket windbreaker sport berbahan Micro Parasut High-Density tahan angin dan cipratan air. Dilengkapi tali serut pinggang modis, hoodie pelindung, dan resleting halus—pas untuk running, senam, gowes, dan berkendara.",
         badge: "New",
         colors: ["Hitam", "Ungu", "Coklat"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -3645,7 +4374,7 @@
           "jaket-running-micro-zxa36-hitam.jpg",
           "jaket-running-micro-zxa36-merah.jpg"
         ],
-        description: "Jaket olahraga lari dan aktivitas outdoor seri ZXA36 terbuat dari material bahan mikro premium berkualitas tinggi yang sangat ringan, nyaman, dan berdaya tahan kuat. Dilengkapi teknologi Dry-Fit & Quick Dry yang cepat menyerap serta menguapkan keringat sehingga tubuh tetap sejuk dan tidak gerah saat berolahraga. Model potongan atletik modern dengan tudung kepala (hoodie), resleting depan kokoh, serta saku samping aman. Sangat ideal untuk running, jogging pagi, gym fitness workout, gowes sepeda, senam, maupun daily sporty wear.",
+        description: "Jaket running windbreaker berbahan Micro Parasut ringan dan breathable. Desain sporty dengan hoodie elastis dan resleting depan, menjaga tubuh tetap nyaman saat jogging pagi, malam, maupun bersepeda.",
         badge: "New",
         colors: ["Dusty", "Hitam", "Merah"],
         sizes: ["M", "L", "XL", "XXL"],
@@ -3673,7 +4402,7 @@
           "baju-running-pria-h039-abu.jpg",
           "baju-running-pria-h039-model.jpg"
         ],
-        description: "Baju olahraga pria tangan pendek seri H039 dengan material Dry-Fit Moisture-Wicking Technology yang ringan dan elastis (flexible 4-way stretch). Dirancang khusus untuk kenyamanan bergerak maksimal saat running, lari pagi, jogging, gym fitness workout, bersepeda, maupun aktivitas kasual harian. Bahan sangat lembut di kulit, sejuk, dan cepat menyerap serta menguapkan keringat (quick dry). Dilengkapi aksen slit samping bawah untuk mobilitas gerak pinggul yang leluasa.",
+        description: "Kaos running pria berbahan Dry-Fit berpori mikro yang sejuk, ringan, dan cepat kering. Potongan regular fit nyaman untuk latihan lari, gym fitness, gowes, dan aktivitas harian.",
         badge: "New",
         colors: ["Cream", "Coklat", "Abu"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -3702,7 +4431,7 @@
           "topi-sport-import-biru.jpg",
           "topi-sport-import-cream.jpg"
         ],
-        description: "Topi olahraga import kualitas premium dirancang khusus untuk aktivitas lari (running), jogging pagi, senam outdoor, gym, bersepeda, hingga gaya casual harian. Terbuat dari material quick-dry mikro polyester yang sangat ringan (ultralight), sejuk, dan dilengkapi panel samping berpori laser-cut breathable untuk sirkulasi udara maksimal tanpa bikin kepala gerah. Dilengkapi strap pengatur di bagian belakang yang fleksibel dan pas untuk berbagai ukuran kepala.",
+        description: "Topi olahraga impor berbahan Micro Quick-Dry dengan ventilasi pori laser-cut. Ringan, anti-gerah, dan dilengkapi strap pengatur ukuran untuk running, senam outdoor, tenis, maupun gaya kasual.",
         badge: "New",
         colors: ["Hitam", "Abu", "Putih", "Biru", "Cream"],
         sizes: ["All Size (Adjustable)"],
@@ -3727,7 +4456,7 @@
           "celana-pendek-jumbo-j2688-hitam.jpg",
           "celana-pendek-jumbo-j2688-hijau.jpg"
         ],
-        description: "Celana pendek olahraga pria Big Size seri J-2688 berpotongan jumbo khusus ukuran besar (6XL hingga 8XL). Dibuat dari material High-Stretch Nylon Dry-Fit yang ekstra lentur (flexible 4-way stretch), sangat ringan (lightweight), dan adem di kulit. Dilengkapi saku ritsleting (zipper pockets) kanan-kiri yang aman untuk smartphone atau dompet, motif tekstur geometris sporty modern, serta pinggang elastis dengan tali serut aktif pengatur kenyamanan. Sangat pas dan leluasa untuk jogging, lari, fitness gym workout, bersepeda, maupun santai harian.",
+        description: "Celana pendek olahraga ukuran jumbo (6XL–8XL) berbahan Nylon Stretch ekstra lentur dan adem. Dilengkapi saku beritsleting dan karet serut fleksibel untuk jogging, gym, dan santai leluasa.",
         badge: "New",
         colors: ["Hitam", "Hijau"],
         sizes: ["6XL", "7XL", "8XL"],
@@ -3753,7 +4482,7 @@
           "jaket-anti-uv-tnh641-hitam.jpg",
           "jaket-anti-uv-tnh641-ungu.jpg"
         ],
-        description: "Jaket olahraga wanita Anti-UV seri Under Armour TNH641 dirancang khusus untuk perlindungan maksimal dari terik paparan sinar matahari saat berolahraga outdoor. Menggunakan material ice-feel cooling fabric yang sejuk, fleksibel (4-way stretch), sangat ringan (lightweight), dan cepat menyerap keringat. Dilengkapi penutup kepala (hoodie), resleting depan full-zip halus, saku samping aman, serta manset lengan dengan lubang jempol (thumbhole) untuk melindungi punggung tangan saat lari, jogging, senam aerobik, gowes sepeda, maupun trekking alam.",
+        description: "Jaket pelindung sinar UV UPF 50+ berbahan Ice-Silk cooling touch yang dingin di kulit dan lentur 4-arah. Dilengkapi hoodie, full-zip, dan thumbhole cuffs untuk lari, senam, gowes, serta outdoor.",
         badge: "New",
         colors: ["Biru", "Hitam", "Ungu"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -3779,7 +4508,7 @@
           "baju-senam-ia14-pink.jpg",
           "baju-senam-ia14-cream.jpg"
         ],
-        description: "Baju olahraga wanita lengan panjang Half-Zipper seri IA14 dengan material Micro Dry-Fit Technology 4-Way Stretch kualitas premium. Desain kerah tegak ber-resleting aktif di bagian depan memudahkan sirkulasi udara serta memberikan tampilan atletis modern nan elegan. Bahan sangat elastis, lembut, dan cepat kering (quick-drying), menjamin kenyamanan ekstra saat senam aerobik, running / jogging, gym workout, bersepeda, trekking outdoor, hingga padu-padan hijab sport.",
+        description: "Baju olahraga wanita lengan panjang berkerah half-zipper modern berbahan Dry-Fit elastis. Menjaga tubuh tetap adem dan ramping, cocok untuk senam aerobik, yoga, running, gowes, dan trekking.",
         badge: "New",
         colors: ["Pink", "Cream"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -3804,7 +4533,7 @@
           "baju-senam-cl71-dusty-ungu.png",
           "baju-senam-cl71-hitam.jpg"
         ],
-        description: "Baju olahraga wanita lengan panjang Under Armour seri CL71 dengan bahan stretch mikro dry-fit premium yang lentur, adem, dan cepat kering. Potongan raglan ergonomis dengan aksen titik ventilasi samping yang anggun dan breathable. Sangat nyaman untuk senam aerobik, yoga, zumba, jogging, lari pagi, gym workout, bersepeda, trekking, maupun paduan hijab olahraga.",
+        description: "Kaos olahraga lengan panjang wanita berbahan Spandex Dry-Fit bertekstur lembut dan elastis. Nyaman dan sopan untuk senam, jogging, fitness, serta aktivitas luar ruangan.",
         badge: "New",
         colors: ["Dusty Ungu", "Hitam"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -3829,7 +4558,7 @@
           "celana-training-lotto-zipper-hitam.jpg",
           "celana-training-lotto-zipper-abu-misty.jpg"
         ],
-        description: "Celana training panjang olahraga bahan lotto tebal premium dengan saku samping berpenutup ritsleting (zipper pocket) yang aman untuk smartphone atau dompet saat aktif bergerak. Dilengkapi karet pinggang elastis dengan tali serut pengunci, aksen 3-stripes sporty di paha samping, dan potongan slim athletic fit yang lentur dan nyaman. Sangat pas untuk running, lari pagi, jogging, bersepeda (cycling), senam, maupun fitness gym workout.",
+        description: "Celana panjang training berbahan Lotto berkualitas dengan saku samping resleting. Pinggang karet bertali serut, kuat dan fleksibel untuk jogging, senam, gowes, maupun santai.",
         badge: "New",
         colors: ["Hitam", "Abu Misty"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -3853,7 +4582,7 @@
           "baju-badminton-victor-253a.jpg",
           "baju-badminton-victor-253a-model.png"
         ],
-        description: "Baju badminton import seri Victor 253A warna hijau salur kombinasi biru cyan cerah. Terbuat dari material mikro dry-fit premium berteknologi sirkulasi udara aktif yang sangat adem, ringan, dan cepat kering saat berkeringat di lapangan. Dilengkapi kerah V-neck elastis yang nyaman serta potongan atletik modern yang leluasa untuk manuver smash, footwork cepat, dan pertandingan badminton intensif.",
+        description: "Jersey badminton impor motif salur dinamis berbahan Polyester Dry-Fit berpori. Ringan, cepat menguapkan keringat, dan leluasa bergerak di lapangan bulutangkis.",
         badge: "New",
         colors: ["Hijau Salur"],
         sizes: ["XL", "2XL"],
@@ -3878,7 +4607,7 @@
           "rok-legging-x896-hitam.jpg",
           "rok-legging-x896-hijau.jpg"
         ],
-        description: "Rok legging panjang wanita seri X896 model 2-in-1 (perpaduan rok rempel plisket tumpuk elegan menyatu dengan celana legging panjang). Terbuat dari bahan spandex elastis berpori mikro yang lentur 4-arah (stretchy), sangat nyaman (comfortable to wear), dan berteknologi quick-drying. Potongan pinggang tinggi (high-waist) yang modis dan menyamarkan perut, sangat cocok untuk senam aerobik, yoga, zumba, running, jogging, fitness gym, tenis, maupun paduan hijab sport.",
+        description: "Kombinasi celana legging panjang dan rok (skort 2-in-1) berbahan Spandex stretch berpinggang tinggi (high-waist). Menutup lekuk tubuh dengan sopan, modis untuk senam, tenis, yoga, dan zumba.",
         badge: "New",
         colors: ["Hitam", "Hijau"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -3904,7 +4633,7 @@
           "baju-running-wanita-xwt431-pink.png",
           "baju-running-wanita-xwt431-hitam.png"
         ],
-        description: "Baju olahraga tangan pendek khusus wanita seri XWT431 dengan konsep 'Simple & Fresh'. Terbuat dari material mikro dry-fit elastis premium yang sangat adem, ringan, cepat kering (quick drying), dan nyaman dipakai seharian. Potongan raglan sporty feminin yang sangat fleksibel untuk senam aerobik, yoga, running, jogging, fitness gym, maupun paduan tennis/badminton.",
+        description: "Kaos olahraga wanita lengan pendek berbahan Dry-Fit lembut dan sejuk. Potongan feminin yang leluasa bergerak untuk sesi senam aerobik, jogging, zumba, dan fitness harian.",
         badge: "New",
         colors: ["Putih", "Pink", "Hitam"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -3930,7 +4659,7 @@
           "jaket-running-micro-serut-dusty.jpg",
           "jaket-running-micro-serut-magenta.jpg"
         ],
-        description: "Jaket running micro parasut seri JA18 model serut tali aktif pada lengan dan pinggang bawah. Material parasut mikro premium yang windproof (tahan angin), ringan, dan breathable. Desain sporty modern dengan kerah tegak tinggi (high-neck), ritsleting kontras elegan, dan saku depan berpenutup aman. Sangat modis dan nyaman untuk lari, jogging, senam, gym, maupun outfit harian.",
+        description: "Jaket windbreaker micro parasut tahan angin dengan tali serut pinggang dan hoodie. Ringan dan tidak gerah untuk lari pagi, bersepeda santai, maupun aktivitas luar ruangan.",
         badge: "New",
         colors: ["Hitam", "Dusty", "Magenta"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -3954,7 +4683,7 @@
           "rok-legging-x893-dusty.jpg",
           "rok-legging-x893-hitam.jpg"
         ],
-        description: "Rok legging panjang wanita seri X893 dengan desain 2-in-1 modis (rok rempel tumpuk menyatu dengan celana legging panjang hingga semata kaki). Terbuat dari material spandex elastis premium yang adem, lentur 4-arah, dan tidak menerawang. Desain pinggang tinggi (high-waist) memberikan kenyamanan ekstra dan siluet ramping saat senam aerobik, zumba, yoga, lari, tenis, maupun paduan hijab olahraga.",
+        description: "Rok legging senam 2-in-1 wanita berbahan stretch elastis tinggi yang tidak menerawang. Memberikan siluet rapi dan percaya diri saat senam, yoga, zumba, serta jogging.",
         badge: "New",
         colors: ["Dusty", "Hitam"],
         sizes: ["M", "L", "XL", "2XL"],
@@ -4009,6 +4738,89 @@
     const mobileBarPrice = document.getElementById("mobileBarPrice");
     const mobileBarWaBtn = document.getElementById("mobileBarWaBtn");
 
+    // Shipping Destination, Courier & Order Summary Elements
+    const modalShippingSection = document.getElementById("modalShippingSection");
+    const shippingProvSelect = document.getElementById("shippingProvSelect");
+    const shippingCitySelect = document.getElementById("shippingCitySelect");
+    const shippingRouteDestText = document.getElementById("shippingRouteDestText");
+    const shippingZoneTag = document.getElementById("shippingZoneTag");
+    const modalShippingList = document.getElementById("modalShippingList");
+    const summaryItemPrice = document.getElementById("summaryItemPrice");
+    const summaryDestVal = document.getElementById("summaryDestVal");
+    const summaryShippingLabel = document.getElementById("summaryShippingLabel");
+    const summaryShippingCost = document.getElementById("summaryShippingCost");
+    const summaryTotalPrice = document.getElementById("summaryTotalPrice");
+
+    // Dataset Wilayah & Zona Pengiriman Se-Indonesia (Referensi Logistik Tumplek.com)
+    // Asal Toko: LapakSports Bekasi Utara (Region 1 Jabodetabek)
+    const SHIPPING_LOCATIONS = {
+      "DKI Jakarta": [[1, "Jakarta Pusat", "Jakarta Utara", "Jakarta Selatan", "Jakarta Timur", "Jakarta Barat", "Kepulauan Seribu"]],
+      "Jawa Barat": [[1, "Bekasi Kota", "Bekasi Kab", "Bogor Kota", "Bogor Kab", "Depok"], [2, "Bandung Kota", "Bandung Kab", "Bandung Barat", "Cimahi", "Cirebon Kota", "Cirebon Kab", "Sukabumi Kota", "Sukabumi Kab", "Garut", "Tasikmalaya Kota", "Tasikmalaya Kab", "Karawang", "Purwakarta", "Subang", "Indramayu", "Majalengka", "Kuningan", "Ciamis", "Pangandaran", "Banjar", "Sumedang"]],
+      "Banten": [[1, "Tangerang Kota", "Tangerang Selatan", "Tangerang Kab"], [2, "Serang Kota", "Serang Kab", "Cilegon", "Lebak", "Pandeglang"]],
+      "DI Yogyakarta": [[3, "Yogyakarta Kota", "Sleman", "Bantul", "Kulon Progo", "Gunungkidul"]],
+      "Jawa Tengah": [[3, "Semarang Kota", "Semarang Kab", "Surakarta (Solo)", "Magelang Kota", "Magelang Kab", "Banyumas (Purwokerto)", "Tegal Kota", "Tegal Kab", "Pekalongan Kota", "Pekalongan Kab", "Kudus", "Jepara", "Pati", "Salatiga", "Boyolali", "Klaten", "Sragen", "Sukoharjo", "Wonogiri", "Wonosobo", "Temanggung", "Brebes", "Pemalang", "Batang", "Kendal", "Demak", "Grobogan", "Blora", "Rembang", "Cilacap", "Banjarnegara", "Purbalingga", "Kebumen", "Purworejo", "Karanganyar"]],
+      "Jawa Timur": [[4, "Surabaya", "Sidoarjo", "Gresik", "Malang Kota", "Malang Kab", "Batu", "Kediri Kota", "Kediri Kab", "Madiun Kota", "Madiun Kab", "Banyuwangi", "Jember", "Bondowoso", "Situbondo", "Probolinggo Kota", "Probolinggo Kab", "Pasuruan Kota", "Pasuruan Kab", "Mojokerto Kota", "Mojokerto Kab", "Jombang", "Bojonegoro", "Tuban", "Lamongan", "Tulungagung", "Blitar Kota", "Blitar Kab", "Pamekasan", "Sumenep", "Bangkalan", "Sampang", "Pacitan", "Trenggalek", "Ponorogo", "Magetan", "Ngawi", "Nganjuk", "Lumajang"]],
+      "Bali": [[7, "Denpasar", "Badung", "Gianyar", "Tabanan", "Klungkung", "Bangli", "Karangasem", "Buleleng", "Jembrana"]],
+      "Nusa Tenggara Barat": [[7, "Mataram", "Lombok Barat", "Lombok Tengah", "Lombok Timur", "Lombok Utara", "Bima Kota", "Bima Kab", "Dompu", "Sumbawa", "Sumbawa Barat"]],
+      "Nusa Tenggara Timur": [[8, "Kupang Kota", "Kupang Kab", "Belu", "Sikka (Maumere)", "Ende", "Manggarai", "Manggarai Barat", "Manggarai Timur", "Ngada", "Nagekeo", "Sumba Barat", "Sumba Barat Daya", "Sumba Tengah", "Sumba Timur", "Alor", "Lembata", "Flores Timur", "Rote Ndao", "Sabu Raijua", "Timor Tengah Selatan", "Timor Tengah Utara", "Malaka"]],
+      "Aceh": [[6, "Banda Aceh", "Sabang", "Langsa", "Lhokseumawe", "Subulussalam", "Aceh Besar", "Pidie", "Pidie Jaya", "Bireuen", "Aceh Tengah", "Aceh Tenggara", "Aceh Tamiang", "Aceh Timur", "Aceh Utara", "Aceh Barat", "Aceh Barat Daya", "Aceh Selatan", "Aceh Singkil", "Aceh Jaya", "Bener Meriah", "Gayo Lues", "Nagan Raya", "Simeulue"]],
+      "Sumatera Utara": [[6, "Medan", "Deli Serdang", "Binjai", "Tebing Tinggi", "Pematang Siantar", "Tanjungbalai", "Sibolga", "Padang Sidempuan", "Gunungsitoli", "Asahan", "Karo", "Simalungun", "Toba", "Nias", "Nias Barat", "Nias Selatan", "Nias Utara", "Tapanuli Tengah", "Tapanuli Utara", "Tapanuli Selatan", "Mandailing Natal", "Labuhanbatu", "Labuhanbatu Selatan", "Labuhanbatu Utara", "Langkat", "Padang Lawas", "Padang Lawas Utara", "Pakpak Bharat", "Dairi", "Humbang Hasundutan", "Samosir", "Batu Bara", "Serdang Bedagai"]],
+      "Sumatera Barat": [[6, "Padang", "Bukittinggi", "Padang Panjang", "Payakumbuh", "Sawahlunto", "Solok Kota", "Solok Kab", "Solok Selatan", "Pariaman", "Padang Pariaman", "Agam", "Tanah Datar", "Pesisir Selatan", "Pasaman", "Pasaman Barat", "Limapuluh Kota", "Sijunjung", "Dharmasraya", "Kepulauan Mentawai"]],
+      "Riau": [[6, "Pekanbaru", "Dumai", "Bengkalis", "Kampar", "Indragiri Hulu", "Indragiri Hilir", "Rokan Hulu", "Rokan Hilir", "Siak", "Pelalawan", "Kuantan Singingi", "Kepulauan Meranti"]],
+      "Kepulauan Riau": [[6, "Batam", "Tanjungpinang", "Bintan", "Karimun", "Lingga", "Kepulauan Anambas", "Natuna"]],
+      "Jambi": [[5, "Jambi Kota", "Sungai Penuh", "Batanghari", "Bungo", "Kerinci", "Merangin", "Muaro Jambi", "Sarolangun", "Tanjung Jabung Barat", "Tanjung Jabung Timur", "Tebo"]],
+      "Bengkulu": [[5, "Bengkulu Kota", "Bengkulu Tengah", "Bengkulu Utara", "Bengkulu Selatan", "Kaur", "Kepahiang", "Lebong", "Mukomuko", "Rejang Lebong", "Seluma"]],
+      "Sumatera Selatan": [[5, "Palembang", "Prabumulih", "Pagar Alam", "Lubuk Linggau", "Banyuasin", "Empat Lawang", "Lahat", "Muara Enim", "Musi Banyuasin", "Musi Rawas", "Musi Rawas Utara", "Ogan Ilir", "Ogan Komering Ilir", "Ogan Komering Ulu", "OKU Selatan", "OKU Timur", "PALI"]],
+      "Kepulauan Bangka Belitung": [[5, "Pangkal Pinang", "Bangka", "Bangka Barat", "Bangka Selatan", "Bangka Tengah", "Belitung", "Belitung Timur"]],
+      "Lampung": [[5, "Bandar Lampung", "Metro", "Lampung Selatan", "Lampung Tengah", "Lampung Utara", "Lampung Timur", "Lampung Barat", "Tanggamus", "Tulang Bawang", "Tulang Bawang Barat", "Way Kanan", "Pesawaran", "Pringsewu", "Mesuji", "Pesisir Barat"]],
+      "Kalimantan Barat": [[8, "Pontianak Kota", "Pontianak Kab", "Singkawang", "Sambas", "Bengkayang", "Ketapang", "Sintang", "Kapuas Hulu", "Kayong Utara", "Kubu Raya", "Landak", "Melawi", "Sanggau", "Sekadau", "Mempawah"]],
+      "Kalimantan Tengah": [[8, "Palangka Raya", "Kotawaringin Barat", "Kotawaringin Timur", "Kapuas", "Barito Selatan", "Barito Utara", "Barito Timur", "Gunung Mas", "Katingan", "Lamandau", "Murung Raya", "Pulang Pisau", "Seruyan", "Sukamara"]],
+      "Kalimantan Selatan": [[8, "Banjarmasin", "Banjarbaru", "Banjar", "Barito Kuala", "Hulu Sungai Selatan", "Hulu Sungai Tengah", "Hulu Sungai Utara", "Kotabaru", "Tabalong", "Tanah Bumbu", "Tanah Laut", "Tapin", "Balangan"]],
+      "Kalimantan Timur": [[8, "Samarinda", "Balikpapan", "Bontang", "Berau", "Kutai Barat", "Kutai Kartanegara", "Kutai Timur", "Mahakam Ulu", "Paser", "Penajam Paser Utara"]],
+      "Kalimantan Utara": [[8, "Tarakan", "Bulungan", "Malinau", "Nunukan", "Tana Tidung"]],
+      "Sulawesi Utara": [[9, "Manado", "Bitung", "Tomohon", "Kotamobagu", "Minahasa", "Minahasa Selatan", "Minahasa Utara", "Minahasa Tenggara", "Bolaang Mongondow", "Bolaang Mongondow Utara", "Bolaang Mongondow Selatan", "Bolaang Mongondow Timur", "Kepulauan Sangihe", "Kepulauan Talaud", "Kepulauan Sitaro"]],
+      "Gorontalo": [[9, "Gorontalo Kota", "Gorontalo Kab", "Boalemo", "Bone Bolango", "Pohuwato", "Gorontalo Utara"]],
+      "Sulawesi Tengah": [[9, "Palu", "Banggai", "Banggai Kepulauan", "Banggai Laut", "Buol", "Donggala", "Morowali", "Morowali Utara", "Parigi Moutong", "Poso", "Sigi", "Tojo Una-Una", "Tolitoli"]],
+      "Sulawesi Barat": [[9, "Mamuju", "Majene", "Mamasa", "Polewali Mandar", "Mamuju Tengah", "Pasangkayu"]],
+      "Sulawesi Selatan": [[9, "Makassar", "Parepare", "Palopo", "Bone", "Bulukumba", "Bantaeng", "Barru", "Enrekang", "Gowa", "Jeneponto", "Luwu", "Luwu Timur", "Luwu Utara", "Maros", "Pangkep", "Pinrang", "Sidrap", "Sinjai", "Soppeng", "Takalar", "Tana Toraja", "Toraja Utara", "Wajo", "Kepulauan Selayar"]],
+      "Sulawesi Tenggara": [[9, "Kendari", "Bau-Bau", "Konawe", "Konawe Selatan", "Konawe Utara", "Konawe Kepulauan", "Buton", "Buton Tengah", "Buton Selatan", "Buton Utara", "Muna", "Muna Barat", "Kolaka", "Kolaka Timur", "Kolaka Utara", "Bombana", "Wakatobi"]],
+      "Maluku": [[10, "Ambon", "Tual", "Maluku Tenggara", "Kepulauan Tanimbar", "Maluku Tengah", "Buru", "Buru Selatan", "Seram Bagian Barat", "Seram Bagian Timur", "Kepulauan Aru"]],
+      "Maluku Utara": [[10, "Ternate", "Tidore Kepulauan", "Halmahera Barat", "Halmahera Tengah", "Halmahera Timur", "Halmahera Selatan", "Halmahera Utara", "Kepulauan Sula", "Pulau Morotai", "Pulau Taliabu"]],
+      "Papua": [[10, "Jayapura Kota", "Jayapura Kab", "Biak Numfor", "Keerom", "Kepulauan Yapen", "Mamberamo Raya", "Sarmi", "Supiori", "Waropen"]],
+      "Papua Barat": [[10, "Manokwari", "Manokwari Selatan", "Fakfak", "Kaimana", "Pegunungan Arfak", "Teluk Bintuni", "Teluk Wondama"]],
+      "Papua Barat Daya": [[10, "Sorong Kota", "Sorong Kab", "Maybrat", "Raja Ampat", "Tambrauw"]],
+      "Papua Pegunungan": [[10, "Jayawijaya", "Mamberamo Tengah", "Lanny Jaya", "Nduga", "Tolikara", "Yahukimo", "Yalimo", "Pegunungan Bintang"]],
+      "Papua Selatan": [[10, "Merauke", "Asmat", "Boven Digoel", "Mappi"]],
+      "Papua Tengah": [[10, "Nabire", "Mimika", "Paniai", "Dogiyai", "Deiyai", "Intan Jaya", "Puncak", "Puncak Jaya"]]
+    };
+
+    // Lookup mapping: Kabupaten/Kota -> Region ID (1-10)
+    const CITY_REGION_MAP = {};
+    Object.entries(SHIPPING_LOCATIONS).forEach(([prov, groups]) => {
+      groups.forEach(g => {
+        const region = g[0];
+        for (let i = 1; i < g.length; i++) {
+          CITY_REGION_MAP[g[i]] = region;
+        }
+      });
+    });
+
+    // Matriks tarif pengiriman (Rp) dari Region 1 (Bekasi) ke Zona 1 s/d 10
+    // Index 1 = Zona 1 (Jabodetabek) s/d Index 10 = Zona 10 (Maluku/Papua)
+    const SHIPPING_RATES = {
+      jne: [0, 10000, 12000, 18000, 20000, 24000, 32000, 32000, 38000, 45000, 65000],
+      lion: [0, 10000, 12000, 16000, 18000, 22000, 30000, 30000, 36000, 42000, 60000]
+    };
+
+    const shippingCouriers = [
+      { id: "jne", name: "JNE", service: "Reguler (2-3 Hari)", baseBadge: "Ekonomis", badgeClass: "shipping-badge-eko", icon: "fa-solid fa-truck" },
+      { id: "lion", name: "Lion Parcel", service: "REGPACK (2-3 Hari)", baseBadge: "Hemat", badgeClass: "shipping-badge-eko", icon: "fa-solid fa-paper-plane" }
+    ];
+
+    let currentDestProv = "Jawa Barat";
+    let currentDestCity = "Bekasi Kota";
+    let selectedShippingId = "jne";
+
     /* ==========================================================================
        3. UTILITIES
        ========================================================================== */
@@ -4037,6 +4849,8 @@
       if (c.includes("pink") || c.includes("pingm")) return "#FF69B4";
       if (c.includes("salem") || c.includes("peach")) return "#FA8072";
       if (c.includes("navy")) return "#0A2540";
+      if (c.startsWith("abu") && (c.includes("hitam") || c.includes("black"))) return "linear-gradient(135deg, #787C82 50%, #111111 50%)";
+      if (c.includes("hitam") && (c.includes("abu") || c.includes("grey"))) return "linear-gradient(135deg, #111111 50%, #787C82 50%)";
       if (c.includes("hitam")) return "#111111";
       if (c.includes("abu") || c.includes("grey") || c.includes("gray")) return "#787C82";
       if (c.includes("putih")) return "#FFFFFF";
@@ -4055,7 +4869,7 @@
 
     /* Build WhatsApp Link with Dynamic Message & Price */
     function buildWhatsAppUrl(product, price, variantColor) {
-      const phoneNumber = "6285219371052";
+      const phoneNumber = "628176719453";
       let name = "";
       let priceText = "";
 
@@ -4077,11 +4891,11 @@
       if (!product) return "";
       const thumbs = (product.galleryThumbs && product.galleryThumbs.length > 0) ? product.galleryThumbs : [product.image];
       const colorLow = (colorName || "").toLowerCase().trim();
-      const colorWords = colorLow.split(/\s+/);
+      const colorWords = colorLow.replace(/kombinasi/g, '').trim().split(/\s+/).filter(Boolean);
 
       let matched = thumbs.find(src => {
         const s = src.toLowerCase();
-        return s.includes(colorLow) || s.includes(colorLow.replace(/\s+/g, '-')) || colorWords.every(w => s.includes(w));
+        return s.includes(colorLow) || s.includes(colorLow.replace(/\s+/g, '-')) || (colorWords.length > 0 && colorWords.every(w => s.includes(w)));
       });
       return matched || product.image;
     }
@@ -4134,7 +4948,7 @@
       const href = anchor.getAttribute("href");
       if (href === "SHOPEE_URL_DISINI") {
         e.preventDefault();
-        alert("Link Shopee LapakSports akan segera aktif. Untuk pemesanan cepat silakan melalui Tokopedia atau WhatsApp 085219371052!");
+        alert("Link Shopee LapakSports akan segera aktif. Untuk pemesanan cepat silakan melalui Tokopedia atau WhatsApp 08176719453!");
       }
     }
 
@@ -4218,7 +5032,7 @@
                           title="Pilih warna ${c}" 
                           aria-label="Pilih warna ${c}"
                           onclick="selectCardVariant(${item.id}, '${c}', this, event)">
-                    <span class="card-swatch-fill" style="background-color: ${getColorHex(c)};"></span>
+                    <span class="card-swatch-fill" style="background: ${getColorHex(c)};"></span>
                   </button>
                 `).join("")}
               </div>
@@ -4386,10 +5200,9 @@
 
     function getProductFullDesc(product) {
       if (product.fullDesc) return product.fullDesc;
-      const p1 = `<strong>${product.name}</strong> dari LapakSports dirancang khusus untuk memenuhi standar apparel olahraga modern. Menggunakan kombinasi material berkualitas pilihan yang mengutamakan kenyamanan, fleksibilitas gerak tubuh, dan daya tahan jangka panjang.`;
-      const p2 = `Dengan fitur sirkulasi udara berpori aktif, produk ini mampu menjaga suhu tubuh tetap sejuk dan mengalirkan uap keringat secara cepat saat Anda melakukan aktivitas intensitas tinggi, mulai dari sesi jogging, senam, gym workout, hingga pertandingan kompetitif.`;
-      const p3 = `Setiap jahitan diproses dengan standar kontrol kualitas (QC) ketat agar tidak mudah koyak serta lembut menyentuh kulit tanpa memicu iritasi. Dapatkan keaslian dan jaminan kualitas terbaik langsung dari LapakSports dengan kemudahan garansi tukar ukuran.`;
-      return `<p>${p1}</p><p>${p2}</p><p>${p3}</p>`;
+      const p1 = `<strong>${product.name}</strong> dirancang untuk kenyamanan maksimal saat berolahraga maupun aktivitas harian. Menggunakan material berkualitas pilihan berstandar kontrol kualitas (QC) ketat yang fleksibel, lembut di kulit, dan tahan lama.`;
+      const p2 = `Dilengkapi teknologi sirkulasi udara berpori aktif (Dry-Fit / Breathable) yang cepat menguapkan keringat agar tubuh tetap adem dan bebas gerah. Dilindungi kemudahan garansi penukaran ukuran 2x24 jam untuk kepuasan belanja Anda di LapakSports.`;
+      return `<p>${p1}</p><p>${p2}</p>`;
     }
 
     function getProductSpecs(product) {
@@ -4421,6 +5234,10 @@
         bahan = "Ice-Silk Microfiber Polyester + Spandex (Anti-UV UPF 50+)";
         karakteristik = "Anti-UV protection, sejuk dingin di kulit (Cooling Touch), lentur 4-way stretch, super ringan (lightweight)";
         model = "Ladies Performance UV Jacket dengan Full-Zip, Hoodie & Thumbhole Cuffs";
+      } else if (product.name.toLowerCase().includes("lotto") || product.name.toLowerCase().includes("scuba") || product.name.toLowerCase().includes("6602") || product.name.toLowerCase().includes("988")) {
+        bahan = "Lotto Scuba Double-Faced Fabric Premium";
+        karakteristik = "Tebal lembut berbobot pas, hangat, sirkulasi udara baik (breathable), tidak mudah kusut";
+        model = "Sport Tech Fleece Full-Zip Jacket dengan Mock-Neck Collar & Ribbed Cuffs";
       } else if (product.name.toLowerCase().includes("jaket")) {
         bahan = "Micro Parasut Polyester High-Density";
         karakteristik = "Windproof, water-repellent ringan, sejuk di dalam";
@@ -4466,19 +5283,193 @@
       ];
     }
 
+    function getZoneLabel(zone) {
+      const labels = {
+        1: "Zona 1 (Jabodetabek)",
+        2: "Zona 2 (Jawa Barat & Banten)",
+        3: "Zona 3 (Jateng & DIY)",
+        4: "Zona 4 (Jawa Timur)",
+        5: "Zona 5 (Sumatera Bag. Selatan)",
+        6: "Zona 6 (Sumatera Bag. Utara)",
+        7: "Zona 7 (Bali & NTB)",
+        8: "Zona 8 (Kalimantan & NTT)",
+        9: "Zona 9 (Sulawesi)",
+        10: "Zona 10 (Maluku & Papua)"
+      };
+      return labels[zone] || `Zona ${zone}`;
+    }
+
+    function initShippingDestinations() {
+      if (!shippingProvSelect || !shippingCitySelect) return;
+
+      // Populate Provinsi
+      const sortedProvs = Object.keys(SHIPPING_LOCATIONS).sort((a, b) => a.localeCompare(b, "id"));
+      shippingProvSelect.innerHTML = sortedProvs.map(p => 
+        `<option value="${p}" ${p === currentDestProv ? 'selected' : ''}>${p}</option>`
+      ).join("");
+
+      // Populate Kota/Kabupaten
+      populateShippingCities(currentDestProv, currentDestCity);
+      updateRouteDisplay();
+    }
+
+    function populateShippingCities(provName, selectCityName = null) {
+      if (!shippingCitySelect) return;
+      const groups = SHIPPING_LOCATIONS[provName] || [];
+      const cities = [];
+      groups.forEach(g => {
+        for (let i = 1; i < g.length; i++) {
+          cities.push(g[i]);
+        }
+      });
+      cities.sort((a, b) => a.localeCompare(b, "id"));
+
+      shippingCitySelect.innerHTML = cities.map(c => 
+        `<option value="${c}">${c}</option>`
+      ).join("");
+
+      if (selectCityName && cities.includes(selectCityName)) {
+        shippingCitySelect.value = selectCityName;
+      } else if (cities.length > 0) {
+        shippingCitySelect.value = cities[0];
+      }
+      currentDestCity = shippingCitySelect.value;
+    }
+
+    function updateRouteDisplay() {
+      const zone = CITY_REGION_MAP[currentDestCity] || 1;
+      if (shippingRouteDestText) shippingRouteDestText.textContent = currentDestCity;
+      if (shippingZoneTag) shippingZoneTag.textContent = getZoneLabel(zone);
+    }
+
+    function onShippingProvChange() {
+      if (!shippingProvSelect) return;
+      currentDestProv = shippingProvSelect.value;
+      populateShippingCities(currentDestProv);
+      updateRouteDisplay();
+      renderShippingOptions();
+      updateOrderSummary();
+      updateModalWhatsAppUrl();
+    }
+
+    function onShippingCityChange() {
+      if (!shippingCitySelect) return;
+      currentDestCity = shippingCitySelect.value;
+      updateRouteDisplay();
+      renderShippingOptions();
+      updateOrderSummary();
+      updateModalWhatsAppUrl();
+    }
+
+    function getCourierCostForCurrentDestination(courierId) {
+      const zone = CITY_REGION_MAP[currentDestCity] || 1;
+      const rates = SHIPPING_RATES[courierId];
+      if (!rates) return null;
+      return rates[zone] !== undefined ? rates[zone] : null;
+    }
+
+    function renderShippingOptions() {
+      if (!modalShippingList) return;
+
+      // Auto-fallback if currently selected courier is not available in this zone (e.g. Instant outside Jabodetabek)
+      const currentSelectedCost = getCourierCostForCurrentDestination(selectedShippingId);
+      if (currentSelectedCost === null) {
+        selectedShippingId = "jne";
+      }
+
+      modalShippingList.innerHTML = shippingCouriers.map(courier => {
+        const cost = getCourierCostForCurrentDestination(courier.id);
+        const isAvailable = cost !== null;
+        const isActive = isAvailable && selectedShippingId === courier.id;
+
+        if (!isAvailable) {
+          return `
+            <div class="shipping-card disabled" title="Layanan ${courier.name} hanya berlaku untuk wilayah Jabodetabek (Zona 1)">
+              <div class="shipping-card-top">
+                <span class="shipping-card-name" style="color: #9CA3AF;">
+                  <i class="${courier.icon}"></i> ${courier.name}
+                </span>
+                <span class="shipping-badge shipping-badge-disabled">Khusus Jabodetabek</span>
+              </div>
+              <div class="shipping-card-service">${courier.service}</div>
+              <div class="shipping-card-cost" style="color: #9CA3AF; font-size: 0.85rem;">Tidak Tersedia</div>
+            </div>
+          `;
+        }
+
+        return `
+          <div class="shipping-card ${isActive ? 'active' : ''}" onclick="selectShippingOption('${courier.id}')">
+            <div class="shipping-card-top">
+              <span class="shipping-card-name">
+                <i class="${courier.icon}"></i> ${courier.name}
+              </span>
+              <span class="shipping-badge ${courier.badgeClass}">${courier.baseBadge}</span>
+            </div>
+            <div class="shipping-card-service">${courier.service}</div>
+            <div class="shipping-card-cost">${formatRupiah(cost)}</div>
+            <span class="shipping-check-icon"><i class="fa-solid fa-check"></i></span>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function selectShippingOption(optId) {
+      const cost = getCourierCostForCurrentDestination(optId);
+      if (cost === null) return; // not available in this zone
+
+      selectedShippingId = optId;
+      renderShippingOptions();
+      updateOrderSummary();
+      updateModalWhatsAppUrl();
+    }
+
+    function updateOrderSummary() {
+      if (!currentModalProduct) return;
+      const itemPrice = currentModalProduct.price || 0;
+      const courier = shippingCouriers.find(c => c.id === selectedShippingId) || shippingCouriers[0];
+      const shippingCost = getCourierCostForCurrentDestination(courier.id) || 0;
+      const grandTotal = itemPrice + shippingCost;
+
+      if (summaryItemPrice) summaryItemPrice.textContent = formatRupiah(itemPrice);
+      if (summaryDestVal) summaryDestVal.textContent = `${currentDestCity}, ${currentDestProv}`;
+      if (summaryShippingLabel) summaryShippingLabel.textContent = `Ongkos Kirim (${courier.name})`;
+      if (summaryShippingCost) summaryShippingCost.textContent = formatRupiah(shippingCost);
+      if (summaryTotalPrice) summaryTotalPrice.textContent = formatRupiah(grandTotal);
+
+      // Sync to Mobile Sticky Action Bar
+      if (mobileBarPrice) mobileBarPrice.textContent = formatRupiah(grandTotal);
+      const mobileLabel = document.querySelector("#mobileDetailBar .mobile-bar-label");
+      if (mobileLabel) mobileLabel.textContent = "Total + Ongkir";
+    }
+
     function updateModalWhatsAppUrl() {
       if (!currentModalProduct) return;
-      const phoneNumber = "6285219371052";
+      const phoneNumber = "628176719453";
       let details = [];
       if (selectedColor) details.push(`Warna: ${selectedColor}`);
       if (selectedSize) details.push(`Ukuran: ${selectedSize}`);
       
-      const priceText = formatRupiah(currentModalProduct.price);
+      const itemPrice = currentModalProduct.price || 0;
+      const courier = shippingCouriers.find(c => c.id === selectedShippingId) || shippingCouriers[0];
+      const shippingCost = getCourierCostForCurrentDestination(courier.id) || 0;
+      const grandTotal = itemPrice + shippingCost;
+
+      const priceText = formatRupiah(itemPrice);
+      const shippingText = `${courier.name} (${courier.service}) - ${formatRupiah(shippingCost)}`;
+      const totalText = formatRupiah(grandTotal);
+
       const variantStr = details.length > 0 ? `\n- Pilihan Varian: ${details.join(", ")}` : "";
-      const message = `Halo LapakSports, saya ingin memesan:\n- Produk: ${currentModalProduct.name}\n- Harga: ${priceText}${variantStr}\n\nMohon info ketersediaan stok dan cara pembayarannya. Terima kasih!`;
+      const destStr = `\n- Tujuan Pengiriman: ${currentDestCity}, ${currentDestProv}`;
+      const message = `Halo LapakSports, saya ingin memesan:\n- Produk: ${currentModalProduct.name}${variantStr}${destStr}\n- Harga Barang: ${priceText}\n- Pengiriman: ${shippingText}\n- Total Pembayaran: ${totalText}\n\nPengiriman ke alamat saya. Mohon info ketersediaan stok dan rekening pembayarannya. Terima kasih!`;
       const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       
-      if (modalWaBtn) modalWaBtn.href = waUrl;
+      if (modalWaBtn) {
+        modalWaBtn.href = waUrl;
+        const textSpan = modalWaBtn.querySelector("span");
+        if (textSpan) {
+          textSpan.innerHTML = `PESAN VIA WA &bull; TOTAL: ${totalText}`;
+        }
+      }
       if (mobileBarWaBtn) mobileBarWaBtn.href = waUrl;
     }
 
@@ -4622,59 +5613,42 @@
         `).join("");
       }
 
-      // 12. Related Products
+      // 12. Related Products (Compact & Non-intrusive Preview)
       if (modalRelatedGrid) {
         const related = products
           .filter(p => p.id !== product.id && (p.category === product.category || p.sportCategory === product.sportCategory))
-          .slice(0, 4);
+          .slice(0, 6);
         
         const filler = products.filter(p => p.id !== product.id && !related.includes(p));
-        while (related.length < 4 && filler.length > 0) {
+        while (related.length < 6 && filler.length > 0) {
           related.push(filler.shift());
         }
 
         modalRelatedGrid.innerHTML = related.map(rel => {
-          const rOldPrice = rel.oldPrice || (Math.round((rel.price * 1.35) / 5000) * 5000);
           return `
-            <article class="hexo-card" data-id="${rel.id}">
-              <div class="card-media-box" onclick="openProductModal(${rel.id})">
-                <span class="card-badge-tag ${getBadgeClass(rel.badge)}">${rel.badge || 'PROMO'}</span>
-                <img src="${rel.image}" alt="${rel.name}" class="card-media-img" loading="lazy">
+            <div class="related-preview-card" onclick="openProductModal(${rel.id})" title="Lihat ${rel.name}">
+              <div class="related-preview-img-box">
+                <img src="${rel.image}" alt="${rel.name}" loading="lazy">
               </div>
-              <div class="card-content">
-                <div class="card-category-row">
-                  <span>${rel.category} &bull; ${rel.sportCategory || 'Sport'}</span>
-                  <div class="card-rating">
-                    <i class="fa-solid fa-star"></i>
-                    <span>5.0</span>
-                  </div>
-                </div>
-                <h3 class="card-title" onclick="openProductModal(${rel.id})">${rel.name}</h3>
-                <div class="card-price-row">
-                  <span class="price-current">${formatRupiah(rel.price)}</span>
-                  <span class="price-old">${formatRupiah(rOldPrice)}</span>
-                </div>
-                <div class="card-action-btns">
-                  <button type="button" class="btn-card-detail" onclick="openProductModal(${rel.id})">
-                    Detail
-                  </button>
-                  <a href="${buildWhatsAppUrl(rel)}" 
-                     target="_blank" 
-                     rel="noopener noreferrer" 
-                     class="btn-card-wa-icon">
-                    <i class="fa-brands fa-whatsapp"></i>
-                  </a>
+              <div class="related-preview-info">
+                <span class="related-preview-cat">${rel.category}</span>
+                <h4 class="related-preview-name">${rel.name}</h4>
+                <div class="related-preview-bottom">
+                  <span class="related-preview-price">${formatRupiah(rel.price)}</span>
+                  <span class="related-preview-link">Lihat <i class="fa-solid fa-chevron-right"></i></span>
                 </div>
               </div>
-            </article>
+            </div>
           `;
         }).join("");
       }
 
-      // 13. Mobile Sticky Bottom Action Bar
-      if (mobileBarPrice) mobileBarPrice.textContent = formatRupiah(product.price);
+      // 13. Ekspedisi Pengiriman & Ringkasan Pesanan Berdasarkan Tujuan
+      initShippingDestinations();
+      renderShippingOptions();
+      updateOrderSummary();
 
-      // 14. Update WhatsApp links with current variant selections
+      // 14. Update WhatsApp links with current variant & shipping selections
       updateModalWhatsAppUrl();
 
       // 15. URL Routing with ?id=
@@ -4687,6 +5661,8 @@
       productModal.classList.add("open");
       document.body.style.overflow = "hidden";
       productModal.scrollTop = 0;
+      const modalDialog = productModal.querySelector(".modal-dialog-full");
+      if (modalDialog) modalDialog.scrollTop = 0;
     }
 
     function switchModalGallery(src, el) {
